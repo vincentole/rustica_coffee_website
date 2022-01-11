@@ -1,16 +1,51 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer components {
+    .cstm-container {
+        @apply px-[24px];
+    }
+    .spacer-xs {
+        @apply pt-[12px];
+    }
+    .spacer-sm {
+        @apply pt-[20px];
+    }
+    .spacer-md {
+        @apply pt-[40px];
+    }
+    .spacer-lg {
+        @apply pt-[60px];
+    }
+    /* Desctop Text Styles */
+    .theme-text-h1 {
+        @apply font-black text-8xl tracking-normal leading-[1.1];
+    }
+    .theme-text-h2 {
+        @apply font-black text-5xl tracking-normal leading-[1.1];
+    }
+    .theme-text-h3 {
+        @apply font-black text-[42px] tracking-normal leading-[1.1];
+    }
+    .theme-text-body {
+        @apply font-normal text-lg tracking-normal leading-[1.3];
+    }
 
-* {
-  box-sizing: border-box;
+    /* Mobile Text Styles */
+    .theme-text-h1-m {
+        @apply font-black text-[64px] tracking-normal leading-[1.1];
+    }
+    .theme-text-h2-m {
+        @apply font-black text-[36px] tracking-normal leading-[1.1];
+    }
+    .theme-text-h3-m {
+        @apply font-black text-[32px] tracking-normal leading-[1.1];
+    }
+    .theme-text-body-m {
+        @apply font-normal text-[14px] tracking-normal leading-[1.3];
+    }
+    .theme-text-subh-m {
+        @apply font-normal text-[18px] tracking-normal leading-[1.1];
+    }
 }
