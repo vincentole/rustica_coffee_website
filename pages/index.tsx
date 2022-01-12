@@ -102,7 +102,7 @@ const Home: NextPage = () => {
                 <section className='bg-theme-anthrazit text-theme-white'>
                     <div className='cstm-container'>
                         <div className='spacer-lg' />
-                        <h2 className='theme-text-h2-m'>Entdecke unsere Kaffee Sorten</h2>
+                        <h2 className='theme-text-h2-m text-center'>Entdecke unsere Kaffee Sorten</h2>
                         <div className='spacer-md' />
                         <div className='grid grid-cols-2-col-155px gap-x-[16px] gap-y-[40px] justify-center'>
                             <ShopItem />

@@ -26,7 +26,7 @@ module.exports = {
             },
             gridTemplateColumns: {
                 '2-col-155px': '155px 155px',
-            },
+            },          
             fontFamily: {
                 sans: ['Roboto', ...defaultTheme.fontFamily.sans],
             },
