@@ -1,12 +1,12 @@
 type Props = {
-    width: string;
-    height: string;
+    className?: string;
 };
 
-const Logo = ({ width = '145', height = '145' }: Props) => (
+const Logo = ({ className }: Props) => (
     <svg
-        width={width}
-        height={height}
+        className={className}
+        width='145'
+        height='145'
         viewBox='0 0 145 145'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'

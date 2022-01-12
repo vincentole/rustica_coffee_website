@@ -1,12 +1,12 @@
 type Props = {
-    width: string;
-    height: string;
+    className: string;
 };
 
-const BurgerMenuClose = ({ width = '21', height = '22' }: Props) => (
+const BurgerMenuClose = ({ className }: Props) => (
     <svg
-        width={width}
-        height={height}
+        className={className}
+        width='21'
+        height='21'
         viewBox='0 0 21 22'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'

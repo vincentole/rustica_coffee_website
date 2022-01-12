@@ -1,12 +1,12 @@
 type Props = {
-    width: string;
-    height: string;
+    className: string;
 };
 
-const IconKaffeePflanze = ({ width = '47', height = '50' }: Props) => (
+const IconKaffeePflanze = ({ className }: Props) => (
     <svg
-        width={width}
-        height={height}
+        className={className}
+        width='47'
+        height='50'
         viewBox='0 0 47 50'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'

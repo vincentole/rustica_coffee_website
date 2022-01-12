@@ -17,9 +17,9 @@ const ShopItem = () => {
             <h3 className='theme-text-subh-m'>Costa Rica</h3>
             <div className='theme-text-body-m text-theme-medium-gray'>6,90€ – 26,90€</div>
             <div className='flex items-center gap-2'>
-                <IconKaffeeBohnen width='12' height='14' />
-                <FrenchPressIcon width='10' height='12' />
-                <IconKaffeeSchaufel width='12' height='13' />
+                <IconKaffeeBohnen className='w-[12] h-[14]' />
+                <FrenchPressIcon className='w-[10px] h-[12px]' />
+                <IconKaffeeSchaufel className='w-[12] h-[13]' />
             </div>
         </div>
     );

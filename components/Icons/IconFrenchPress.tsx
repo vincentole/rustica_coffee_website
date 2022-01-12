@@ -1,10 +1,16 @@
 type Props = {
-    width: string;
-    height: string;
+    className: string;
 };
 
-const FrenchPressIcon = ({ width = '39', height = '49' }: Props) => (
-    <svg width={width} height={height} viewBox='0 0 39 49' fill='none' xmlns='http://www.w3.org/2000/svg'>
+const FrenchPressIcon = ({ className }: Props) => (
+    <svg
+        className={className}
+        width='39'
+        height='49'
+        viewBox='0 0 39 49'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+    >
         <path
             d='M26.13 47.52H8.79999C6.75999 47.52 5.10999 45.87 5.10999 43.83V13.71H29.82V43.83C29.82 45.87 28.17 47.52 26.13 47.52Z'
             stroke='currentColor'

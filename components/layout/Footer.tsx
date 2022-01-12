@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className='spacer-lg' />
                 <div className='grid grid-cols-[repeat(auto-fit,160px)] justify-center gap-[34px] lg:grid-cols-[repeat(5,160px)] lg:items-center'>
                     <div className='col-span-full lg:col-auto lg:mb-10'>
-                        <Logo width='35' height='35' />
+                        <Logo className='w-[35px] h-[35px]' />
                         <div className='spacer-xs' />
                         <h2 className='theme-text-h3-m text-[24px]'>Rustica</h2>
                         <div className='theme-text-subh-m'>Café & Rösterei</div>
