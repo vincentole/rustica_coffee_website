@@ -27,8 +27,8 @@ const Button: React.FC<Props> = (props) => {
         borderWhite ? 'border-theme-white' : 'border-theme-anthrazit'
     }`;
     const variantStyle = secondary
-        ? 'bg-theme-white text-black hover:bg-theme-anthrazit hover:text-white active:text-white active:bg-theme-kraftpapier'
-        : 'bg-theme-anthrazit text-theme-white hover:bg-theme-medium-gray active:bg-theme-kraftpapier';
+        ? 'bg-theme-white text-black hover:bg-theme-anthrazit hover:text-white active:text-white active:bg-theme-kraftpapier active:border-theme-kraftpapier'
+        : 'bg-theme-anthrazit text-theme-white hover:bg-theme-hover-gray hover:border-theme-hover-gray active:bg-theme-kraftpapier active:border-theme-kraftpapier';
 
     if (type === 'anchor') {
         return (

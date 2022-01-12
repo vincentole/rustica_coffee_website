@@ -2,22 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer utilities {
     .cstm-container {
-        @apply px-[24px];
+        @apply px-[24px] lg:px-[100px];
     }
-    .spacer-xs {
+    .spacer-0 {
+        @apply pt-[0px];
+    }
+    .spacer-5 {
+        @apply pt-[5px];
+    }
+    .spacer-12 {
         @apply pt-[12px];
     }
-    .spacer-sm {
+    .spacer-24 {
+        @apply pt-[24px];
+    }
+    .spacer-20 {
         @apply pt-[20px];
     }
-    .spacer-md {
+    .spacer-35 {
+        @apply pt-[35px];
+    }
+    .spacer-40 {
         @apply pt-[40px];
     }
-    .spacer-lg {
+    .spacer-60 {
         @apply pt-[60px];
     }
+    .spacer-80 {
+        @apply pt-[80px];
+    }
+    .spacer-90 {
+        @apply pt-[90px];
+    }
+    .spacer-125 {
+        @apply pt-[125px];
+    }
+    .spacer-130 {
+        @apply pt-[130px];
+    }
+
     /* Desctop Text Styles */
     .theme-text-h1 {
         @apply font-black text-8xl tracking-normal leading-[1.1];

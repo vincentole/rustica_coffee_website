@@ -20,28 +20,27 @@ const Home: NextPage = () => {
             <main className='font-roboto'>
                 {/* hero section */}
                 <HeroSection />
-                <div className='spacer-lg' />
+                <div className='spacer-60 lg:spacer-125' />
 
                 {/* the caffee section */}
                 <InfoSectionImgRight />
-                <div className='spacer-md' />
+                <div className='spacer-40 lg:spacer-125' />
 
                 {/* organic section */}
                 <InfoSectionImgLeft />
-                <div className='spacer-lg' />
+                <div className='spacer-60 lg:spacer-125' />
 
                 {/* shop section */}
                 <ShopSection />
 
                 {/* origin section */}
                 <OriginSection />
-
+                <div className='spacer-60 lg:spacer-125' />
                 {/* features section */}
                 <FeaturesSection />
-
+                <div className='spacer-60 lg:spacer-125' />
                 {/* map section */}
                 <MapSection />
-
             </main>
         </div>
     );

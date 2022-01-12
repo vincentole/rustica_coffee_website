@@ -16,15 +16,19 @@ const OriginSection = () => {
                 />
             </div>
             <div className='absolute bg-black/30 inset-0'>
-                <div className='flex flex-col justify-center items-center h-full'>
-                    <h1 className='theme-text-h3-m text-white'>Herkunft</h1>
-                    <div className='spacer-xs' />
-                    <p className='theme-text-body-m text-white w-[240px] md:w-[300px]'>
-                        Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und
-                        Konsonantien leben die Blindtexte.Und das alles in bester Bio Qualität
+                <div className='flex flex-col justify-center items-center h-full theme-text-body-m text-center lg:theme-text-body'>
+                    <h2 className='theme-text-h3-m text-white lg:theme-text-h3'>Herkunft</h2>
+                    <div className='spacer-12' />
+                    <p className='text-white w-[400px]'>
+                        Weit hinten, hinter den Wortbergen, <br />
+                        fern der Länder Vokalien und
+                        <br />
+                        Konsonantien leben die Blindtexte.
+                        <br />
+                        Und das alles in bester Bio Qualität
                     </p>
-                    <div className='spacer-sm' />
-                    <div className='theme-text-body-m text-white'>mehr</div>
+                    <div className='spacer-20 lg:spacer-35' />
+                    <div className='text-white'>mehr</div>
                 </div>
             </div>
         </section>
