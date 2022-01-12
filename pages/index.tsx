@@ -44,7 +44,7 @@ const Home: NextPage = () => {
                             </div>
                         </div>
                         <div className='relative bottom-[25%] flex justify-center'>
-                            <Button label='zum Shop' anchor anchorId='#' />
+                            <Button label='zum Shop' type='anchor' anchorId='#' />
                         </div>
                     </div>
                 </section>
@@ -113,7 +113,7 @@ const Home: NextPage = () => {
                     </div>
                     <div className='spacer-md' />
                     <div className='flex justify-center'>
-                        <Button label='alle Produkte' link href='#' borderWhite />
+                        <Button label='alle Produkte' type='link' href='#' borderWhite />
                     </div>
                     <div className='spacer-lg' />
                 </section>
@@ -182,7 +182,7 @@ const Home: NextPage = () => {
                                 </div>
                                 <div className='spacer-md' />
                                 <div>
-                                    <Button label='zum Shop' anchor anchorId='#' />
+                                    <Button label='zum Shop' type='anchor' anchorId='#' />
                                 </div>
                             </div>
                         </div>

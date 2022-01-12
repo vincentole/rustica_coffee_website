@@ -1,16 +1,28 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-type Props = {
+type PropsLink = {
     label: string;
-    link?: boolean;
-    href?: string;
-    anchor?: boolean;
-    anchorId?: string;
     secondary?: boolean;
     borderWhite?: boolean;
+
+    type: 'link';
+    href: string;
 };
 
-const Button = ({ label, link, href, anchor, anchorId, secondary, borderWhite }: Props) => {
+type PropsAnchor = {
+    label: string;
+    secondary?: boolean;
+    borderWhite?: boolean;
+
+    type: 'anchor';
+    anchorId: string;
+};
+
+type Props = PropsLink | PropsAnchor;
+
+const Button: React.FC<Props> = (props) => {
+    const { label, type, secondary, borderWhite } = props;
+
     const baseStyle = `py-3 px-12 rounded-[5px] border-[3px] ${
         borderWhite ? 'border-theme-white' : 'border-theme-anthrazit'
     }`;
@@ -18,23 +30,23 @@ const Button = ({ label, link, href, anchor, anchorId, secondary, borderWhite }:
         ? 'bg-theme-white text-black hover:bg-theme-anthrazit hover:text-white active:text-white active:bg-theme-kraftpapier'
         : 'bg-theme-anthrazit text-theme-white hover:bg-theme-medium-gray active:bg-theme-kraftpapier';
 
-    if (anchor) {
+    if (type === 'anchor') {
         return (
-            <a href={anchorId} className={`${baseStyle} ${variantStyle}`}>
+            <a href={props.anchorId} className={`${baseStyle} ${variantStyle}`}>
                 {label}
             </a>
         );
     }
 
-    if (link) {
+    if (type === 'link') {
         return (
-            <Link href={href!}>
+            <Link href={props.href}>
                 <a className={`${baseStyle} ${variantStyle}`}>{label}</a>
             </Link>
         );
     }
 
-    return <div>specify anchor or link</div>;
+    return <div className='bg-red-600 text-white p-2'>Specify the type prop.</div>;
 };
 
 export default Button;
