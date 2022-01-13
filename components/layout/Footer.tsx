@@ -34,13 +34,16 @@ const Footer = () => {
                     <nav>
                         <ul>
                             <li>
-                                <InlineLink href='#' label='Café' />
+                                <InlineLink href='/das-cafe' label='Café' />
                             </li>
                             <li>
-                                <InlineLink href='#' label='Shop' />
+                                <InlineLink href='/herkunft' label='Herkunft' />
                             </li>
                             <li>
-                                <InlineLink href='#' label='Herkunft' />
+                                <InlineLink href='/shop' label='Shop' />
+                            </li>
+                            <li>
+                                <InlineLink href='/kontakt' label='Kontakt' />
                             </li>
                         </ul>
                     </nav>

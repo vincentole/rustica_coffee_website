@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import Button from '../UI/Button';
 
-import heroImageMobile from '../../public/img/FEND-Coffee-latte-art-3.png';
+import heroImage from '../../public/img/FEND-Coffee-latte-art-3.png';
 
-const HeroSection = () => {
+const HeroSectionTxtCta = () => {
     return (
-        <section className='relative h-[75vh] min-h-[320px]'>
+        <section className='relative h-[75vh] min-h-[320px] md:h-[65vh]'>
             <div className='relative w-full h-full'>
                 <Image
-                    src={heroImageMobile}
+                    src={heroImage}
                     alt='coffe latte art'
                     layout='fill'
                     objectFit='cover'
@@ -29,4 +29,4 @@ const HeroSection = () => {
     );
 };
 
-export default HeroSection;
+export default HeroSectionTxtCta;

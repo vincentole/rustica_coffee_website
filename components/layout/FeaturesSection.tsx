@@ -30,9 +30,7 @@ const FeaturesSection = () => {
                     <div className='spacer-40' />
 
                     <div className='flex flex-col items-center lg:justify-center'>
-                        <div
-                            className='flex gap-[60px] lg:flex-col theme-text-body-m lg:theme-text-body'
-                        >
+                        <div className='flex gap-[60px] lg:flex-col theme-text-body-m lg:theme-text-body'>
                             <div className=' flex flex-col items-center text-center'>
                                 <IconKaffeeTasse className='w-[45px] h-[46px]' />
                                 <div className='spacer-20' />

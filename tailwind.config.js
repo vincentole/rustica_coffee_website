@@ -33,6 +33,9 @@ module.exports = {
             fontFamily: {
                 sans: ['Roboto', ...defaultTheme.fontFamily.sans],
             },
+            transitionProperty: {
+                'border-color': 'border-color',
+            },
         },
     },
     plugins: [],

@@ -6,6 +6,9 @@
     .cstm-container {
         @apply px-[24px] lg:px-[100px];
     }
+    .cstm-container-nav {
+        @apply px-[24px] md:px-[100px];
+    }
     .spacer-0 {
         @apply pt-[0px];
     }
