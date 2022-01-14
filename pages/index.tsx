@@ -4,13 +4,14 @@ import Head from 'next/head';
 import HeroSectionTxtCta from '../components/layout/HeroSectionTxtCta';
 import InfoSectionImgRight from '../components/layout/InfoSectionImgRight';
 import InfoSectionImgLeft from '../components/layout/InfoSectionImgLeft';
-import ShopSection from '../components/Shop/ShopSection';
+import ShopSectionTopProducts from '../components/Shop/ShopSectionTopProducts';
 import OriginSection from '../components/layout/OriginSection';
 import FeaturesSection from '../components/layout/FeaturesSection';
 import MapSection from '../components/layout/MapSection';
 
 import shopImage from '../public/img/FEND-Coffee-shop.png';
 import plantImage from '../public/img/FEND-coffee-plant.png';
+
 const Home: NextPage = () => {
     return (
         <>
@@ -28,15 +29,18 @@ const Home: NextPage = () => {
                 <div className='spacer-60 lg:spacer-125' />
 
                 {/* the caffee section */}
-                <InfoSectionImgRight img={shopImage} alt='our store with people enjoing our products'/>
+                <InfoSectionImgRight
+                    img={shopImage}
+                    alt='our store with people enjoing our products'
+                />
                 <div className='spacer-40 lg:spacer-125' />
 
                 {/* organic section */}
-                <InfoSectionImgLeft img={plantImage} alt='coffee plant'/>
+                <InfoSectionImgLeft img={plantImage} alt='coffee plant' />
                 <div className='spacer-60 lg:spacer-125' />
 
                 {/* shop section */}
-                <ShopSection />
+                <ShopSectionTopProducts />
 
                 {/* origin section */}
                 <OriginSection />

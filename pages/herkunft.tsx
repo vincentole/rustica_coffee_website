@@ -49,7 +49,7 @@ const Herkunft = () => {
                 {/* info image left section */}
                 <InfoSectionImgLeftTxtOffset
                     img={coffeeWorkerImage}
-                    alt='coffee worker picking coffee beans'    
+                    alt='coffee worker picking coffee beans'
                 />
                 <div className='spacer-60 lg:spacer-125' />
             </main>

@@ -30,6 +30,9 @@
     .spacer-40 {
         @apply pt-[40px];
     }
+    .spacer-55 {
+        @apply pt-[55px];
+    }
     .spacer-60 {
         @apply pt-[60px];
     }

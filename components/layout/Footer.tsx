@@ -23,10 +23,10 @@ const Footer = () => {
                     <nav>
                         <ul>
                             <li>
-                                <InlineLink href='#' label='Impressum' />
+                                <InlineLink href='/impressum' label='Impressum' />
                             </li>
                             <li>
-                                <InlineLink href='#' label='Datenschutz' />
+                                <InlineLink href='/impressum' label='Datenschutz' />
                             </li>
                         </ul>
                     </nav>

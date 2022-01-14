@@ -49,7 +49,7 @@ const FeaturesSection = () => {
                         </div>
                         <div className='spacer-40 ' />
                         <div>
-                            <Button label='zum Shop' type='anchor' anchorId='#' />
+                            <Button label='zum Shop' type='link' href='/shop' />
                         </div>
                     </div>
                 </div>

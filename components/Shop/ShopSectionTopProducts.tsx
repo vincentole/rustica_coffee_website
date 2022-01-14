@@ -1,8 +1,9 @@
-import ShopItem from './ShopItem';
+import ShopItem from './ShopItemTopProducts';
+import Button from '../UI/Button';
 
-const ShopSection = () => {
+const ShopSectionTopProducts = () => {
     return (
-        <section>
+        <section className='bg-theme-anthrazit text-theme-white'>
             <div className='cstm-container'>
                 <div className='spacer-60 lg:spacer-125' />
                 <div className='grid grid-cols-2-col-155px gap-x-[16px] gap-y-[40px] justify-center lg:grid-cols-4-col-155px'>
@@ -15,16 +16,15 @@ const ShopSection = () => {
                     <ShopItem />
                     <ShopItem />
                     <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
                 </div>
             </div>
-
+            <div className='spacer-40 lg:spacer-80' />
+            <div className='flex justify-center'>
+                <Button label='alle Produkte' type='link' href='/shop' borderWhite />
+            </div>
             <div className='spacer-60 lg:spacer-125' />
         </section>
     );
 };
 
-export default ShopSection;
+export default ShopSectionTopProducts;

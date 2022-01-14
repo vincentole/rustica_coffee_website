@@ -22,7 +22,7 @@ const HeroSectionTxtCta = () => {
                     <div className='theme-text-subh-m text-white'>Bio und Fair seit 1991</div>
                 </div>
                 <div className='relative bottom-[25%] flex justify-center'>
-                    <Button label='zum Shop' type='anchor' anchorId='#' />
+                    <Button label='zum Shop' type='link' href='/shop' />
                 </div>
             </div>
         </section>
