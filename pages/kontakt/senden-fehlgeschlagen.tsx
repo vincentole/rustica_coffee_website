@@ -1,10 +1,11 @@
 import Head from 'next/head';
+import FailureIcon from '../../components/Icons/FailureIcon';
 import MailIcon from '../../components/Icons/MailIcon';
 import SuccessIcon from '../../components/Icons/SuccessIcon';
 import ContactSection from '../../components/layout/ContactFormSection';
 import MapSection from '../../components/layout/MapSection';
 
-const SendenErfolgreich = () => {
+const SendenFehlgeschlagen = () => {
     return (
         <>
             <Head>
@@ -24,14 +25,17 @@ const SendenErfolgreich = () => {
                         <h2 className='theme-text-h2-m lg:theme-text-h2'>
                             Senden
                             <br />
-                            Erfolgreich!
+                            Fehlgeschlagen!
                         </h2>
                         <div className='spacer-35 lg:spacer-55' />
-                        <p>Vielen Dank, Ihre Nachricht wurde erfolgreich versendet.</p>
+                        <p>
+                            Ihre Nachricht konnte leider nicht gesendet werden. Bitte versuchen Sie
+                            es zu einem späteren Zeitpunkt erneut.
+                        </p>
                         <div className='spacer-12' />
                         <div>
-                            <SuccessIcon className='text-theme-petrol inline' />
-                            <MailIcon className='text-theme-petrol inline' />
+                            <FailureIcon className='text-red-500 inline' />
+                            <MailIcon className='text-rose-500 inline' />
                         </div>
                     </div>
                 </section>
@@ -42,4 +46,4 @@ const SendenErfolgreich = () => {
     );
 };
 
-export default SendenErfolgreich;
+export default SendenFehlgeschlagen;

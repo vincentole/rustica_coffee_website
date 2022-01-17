@@ -53,18 +53,33 @@ const ContactFormSection = () => {
                 <Formik
                     initialValues={initialValues}
                     validationSchema={validationSchema}
-                    onSubmit={(values, actions) => {
-                        console.log(typeof values, values);
-                        fetch('https://formspree.io/f/xzbodezv', {
-                            method: 'POST',
-                            body: JSON.stringify(values),
-                            headers: {
-                                Accept: 'application/json',
-                            },
-                        });
-                        actions.resetForm();
-                        actions.setSubmitting(false);
-                        router.replace('/kontakt/senden-erfolgreich');
+                    onSubmit={async (values, actions) => {
+                        const sendForm = async () => {
+                            const response = await fetch('https://formspree.io/f/xzbodezv', {
+                                method: 'POST',
+                                body: JSON.stringify(values),
+                                headers: {
+                                    Accept: 'application/json',
+                                },
+                            });
+
+                            if (!response.ok) {
+                                throw new Error(
+                                    `Sending message failed. \n Status: ${response.status}`,
+                                );
+                            }
+                        };
+
+                        try {
+                            await sendForm();
+                            actions.resetForm();
+                            actions.setSubmitting(false);
+                            router.push('/kontakt/senden-erfolgreich');
+                        } catch (error) {
+                            actions.resetForm();
+                            actions.setSubmitting(false);
+                            router.push('/kontakt/senden-fehlgeschlagen');
+                        }
                     }}
                 >
                     {(formik) => (
