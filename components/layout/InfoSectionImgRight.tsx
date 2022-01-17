@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Address from '../Store/Address';
-import OpeningHours from '../Store/OpeningHours';
+import Address from '../the-cafe/Address';
+import OpeningHours from '../the-cafe/OpeningHours';
 
 type Props = {
     img: StaticImageData;

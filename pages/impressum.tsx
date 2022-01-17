@@ -14,7 +14,7 @@ const Impressum = () => {
             <main>
                 <div className='spacer-55 bg-theme-anthrazit' />
                 <div className='spacer-55 bg-theme-anthrazit' />
-                <div className='spacer-55' />
+                <div className='spacer-60' />
                 <div className='cstm-container mx-auto prose lg:prose-xl'>
                     <h2>Imprint & </h2>
                     <h3>address </h3>

@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import MapSection from '../components/layout/MapSection';
-import ShopSection from '../components/Shop/ShopSection';
+import ContactSection from '../../components/layout/ContactFormSection';
+import MapSection from '../../components/layout/MapSection';
 
-const Shop = () => {
+const Kontakt = () => {
     return (
         <>
             <Head>
@@ -17,13 +17,12 @@ const Shop = () => {
                 <div className='spacer-55 bg-theme-anthrazit' />
                 <div className='spacer-55 bg-theme-anthrazit' />
                 <div className='spacer-60 lg:spacer-125' />
-                <ShopSection />
+                <ContactSection />
                 <div className='spacer-60 lg:spacer-125' />
-
                 <MapSection />
             </main>
         </>
     );
 };
 
-export default Shop;
+export default Kontakt;

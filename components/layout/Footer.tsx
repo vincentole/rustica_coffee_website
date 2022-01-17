@@ -1,6 +1,6 @@
 import Logo from '../Icons/Logo';
-import Address from '../Store/Address';
-import OpeningHours from '../Store/OpeningHours';
+import Address from '../the-cafe/Address';
+import OpeningHours from '../the-cafe/OpeningHours';
 import InlineLink from '../UI/InlineLink';
 
 const Footer = () => {

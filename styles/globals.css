@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    
+    input[type='text'], input[type='email'] {
+        @apply px-[15px] py-[10px] focus:bg-theme-light-gray border-t-transparent border-l-transparent border-r-transparent border-b-[3px] border-theme-anthrazit focus:outline-none;
+    }
+    textarea {
+        @apply h-[170px] px-[15px] py-[10px] focus:bg-theme-light-gray border-t-transparent border-l-transparent border-r-transparent border-b-[3px] border-theme-anthrazit focus:outline-none;
+    }
+   
+}
+
 @layer utilities {
     .cstm-container {
         @apply px-[24px] lg:px-[100px];
@@ -78,5 +89,14 @@
     }
     .theme-text-subh-m {
         @apply font-normal text-[18px] tracking-normal leading-[1.1];
+    }
+}
+
+@layer components {
+    input:not(:placeholder-shown).bg-no-placeholder {
+        background: #E9E9E9;
+    }
+    textarea:not(:placeholder-shown).bg-no-placeholder {
+        background: #E9E9E9;
     }
 }

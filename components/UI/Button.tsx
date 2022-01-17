@@ -18,10 +18,20 @@ type PropsAnchor = {
     anchorId: string;
 };
 
-type Props = PropsLink | PropsAnchor;
+type PropsButton = {
+    secondary?: boolean;
+    borderWhite?: boolean;
+
+    type: 'button';
+    btnType: 'button' | 'submit' | 'reset';
+    disabled: boolean;
+    onClick?: () => void;
+};
+
+type Props = PropsLink | PropsAnchor | PropsButton;
 
 const Button: React.FC<Props> = (props) => {
-    const { label, type, secondary, borderWhite } = props;
+    const { type, secondary, borderWhite } = props;
 
     const baseStyle = `py-3 px-12 rounded-[5px] border-[3px] ${
         borderWhite ? 'border-theme-white' : 'border-theme-anthrazit'
@@ -33,7 +43,7 @@ const Button: React.FC<Props> = (props) => {
     if (type === 'anchor') {
         return (
             <a href={props.anchorId} className={`${baseStyle} ${variantStyle}`}>
-                {label}
+                {props.label}
             </a>
         );
     }
@@ -41,8 +51,16 @@ const Button: React.FC<Props> = (props) => {
     if (type === 'link') {
         return (
             <Link href={props.href}>
-                <a className={`${baseStyle} ${variantStyle}`}>{label}</a>
+                <a className={`${baseStyle} ${variantStyle}`}>{props.label}</a>
             </Link>
+        );
+    }
+
+    if (type === 'button') {
+        return (
+            <button type={props.btnType} disabled={props.disabled} className={`${baseStyle} ${variantStyle}`}>
+                {props.children}
+            </button>
         );
     }
 
