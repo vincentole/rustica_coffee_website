@@ -1,6 +1,15 @@
 import ShopItem from './ShopItem';
+import ShopItemType from '../../types/shopItem';
+import Link from 'next/link';
 
-const ShopSection = () => {
+const ShopSection: React.FC<{ shopItems: ShopItemType[] }> = ({ shopItems }) => {
+    const itemList = shopItems.map((item) => (
+        <Link key={item.id} href={`/shop/items/${item.id}`}>
+            <a>
+                <ShopItem img={item.img} title={item.title} price={item.price} />
+            </a>
+        </Link>
+    ));
     return (
         <section>
             <div className='cstm-container mx-auto'>
@@ -10,14 +19,7 @@ const ShopSection = () => {
                         <br />
                         Kaffee Sorten
                     </h2>
-                    <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
+                    {itemList}
                 </div>
             </div>
         </section>

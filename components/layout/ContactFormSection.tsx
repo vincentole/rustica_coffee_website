@@ -3,6 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useRouter } from 'next/router';
 import * as Yup from 'yup';
 import Button from '../UI/Button';
+import FormErrorDiv from './FormErrorDiv';
 
 type Values = {
     name: string;
@@ -23,21 +24,20 @@ const initialValues = {
 };
 
 const validationSchema = Yup.object({
-    name: Yup.string().trim().required('This field is required!'),
+    name: Yup.string().trim().required('Bitte gib hier deinen Namen an.'),
     email: Yup.string()
-        .email('Please provide a valid email address!')
-        .required('This field is required!'),
+        .email('Bitte gib eine gültige E-Mail Adresse an.')
+        .required('Bitte gib deine E-Mail Adresse an.'),
     phone: Yup.number()
-        .positive('Please provide a valid phone number!')
-        .integer('Please provide a valid phone number!'),
-    subject: Yup.string().required(),
-    message: Yup.string().trim().required('This field is required!'),
-    dataSecurity: Yup.boolean().isTrue(),
+        .typeError('Bitte gib eine gültige Telefonnummer an.')
+        .positive('Bitte gib eine gültige Telefonnummer an.')
+        .integer('Bitte gib eine gültige Telefonnummer an.'),
+    subject: Yup.string().required('Bitte wähle einen Betreff aus.'),
+    message: Yup.string().trim().required('Bitte gib eine Nachricht ein.'),
+    dataSecurity: Yup.boolean().isTrue(
+        'Du must der Datenschutzerklärung zustimmen um fortzufahren.',
+    ),
 });
-
-const ErrorDiv: React.FC = ({ children }) => {
-    return <div className='text-rose-500'>{children}</div>;
-};
 
 const ContactFormSection = () => {
     const router = useRouter();
@@ -98,12 +98,12 @@ const ContactFormSection = () => {
                                         'bg-rose-300 placeholder-rose-500'
                                     }`}
                                 />
-                                <ErrorMessage name='name' component={ErrorDiv} />
+                                <ErrorMessage name='name' component={FormErrorDiv} />
                             </div>
                             <div className='flex flex-col gap-[5px] lg:gap-[10px]'>
                                 <label htmlFor='email'>E-Mail*</label>
                                 <Field id='email' name='email' placeholder='E-Mail' type='email' />
-                                <ErrorMessage name='email' component={ErrorDiv} />
+                                <ErrorMessage name='email' component={FormErrorDiv} />
                             </div>
                             <div className='flex flex-col gap-[5px] lg:gap-[10px]'>
                                 <label htmlFor='phone'>Telefonnummer</label>
@@ -118,7 +118,7 @@ const ContactFormSection = () => {
                                         'bg-rose-300 placeholder-rose-500'
                                     }`}
                                 />
-                                <ErrorMessage name='phone' component={ErrorDiv} />
+                                <ErrorMessage name='phone' component={FormErrorDiv} />
                             </div>
                             <div className='flex flex-col gap-[5px] lg:gap-[10px]'>
                                 <label htmlFor='subject' className='sr-only'>
@@ -128,8 +128,11 @@ const ContactFormSection = () => {
                                     id='subject'
                                     name='subject'
                                     as='select'
-                                    className='rounded-[5px] bg-theme-anthrazit text-theme-white'
+                                    className='rounded-[5px] border-[3px] border-theme-anthrazit text-theme-anthrazit h-[50px] focus:border-theme-kraftpapier focus:ring-theme-kraftpapier'
                                 >
+                                    <option hidden defaultValue={'Dein Betreff'}>
+                                        Dein Betreff
+                                    </option>
                                     <option value='Fragen zur Lieferung'>
                                         Fragen zur Lieferung
                                     </option>
@@ -137,7 +140,7 @@ const ContactFormSection = () => {
                                     <option value='Vertriebsfragen'>Vertriebsfragen</option>
                                     <option value='einfach nur so!'>einfach nur so!</option>
                                 </Field>
-                                <ErrorMessage name='subject' component={ErrorDiv} />
+                                <ErrorMessage name='subject' component={FormErrorDiv} />
                             </div>
                             <div className='flex flex-col gap-[5px] lg:gap-[10px]'>
                                 <label htmlFor='message'>Deine Nachricht</label>
@@ -152,7 +155,7 @@ const ContactFormSection = () => {
                                         'bg-rose-300 placeholder-rose-500'
                                     }`}
                                 />
-                                <ErrorMessage name='message' component={ErrorDiv} />
+                                <ErrorMessage name='message' component={FormErrorDiv} />
                             </div>
                             <div className='flex flex-col gap-[5px] lg:gap-[10px]'>
                                 <label>
@@ -164,7 +167,7 @@ const ContactFormSection = () => {
                                     />
                                     Ich aktzeptiere die Datenschutzerklärung
                                 </label>
-                                <ErrorMessage name='dataSecurity' component={ErrorDiv} />
+                                <ErrorMessage name='dataSecurity' component={FormErrorDiv} />
                             </div>
                             <div className='mx-auto'>
                                 <Button

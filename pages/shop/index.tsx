@@ -1,8 +1,12 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import MapSection from '../components/layout/MapSection';
-import ShopSection from '../components/Shop/ShopSection';
+import MapSection from '../../components/layout/MapSection';
+import ShopSection from '../../components/Shop/ShopSection';
 
-const Shop = () => {
+import shopItemsData from '../../data/shopItems';
+import ShopItemType from '../../types/shopItem';
+
+const Shop: React.FC<{ shopItems: ShopItemType[] }> = ({ shopItems }) => {
     return (
         <>
             <Head>
@@ -17,7 +21,7 @@ const Shop = () => {
                 <div className='spacer-55 bg-theme-anthrazit' />
                 <div className='spacer-55 bg-theme-anthrazit' />
                 <div className='spacer-60 lg:spacer-125' />
-                <ShopSection />
+                <ShopSection shopItems={shopItems} />
                 <div className='spacer-60 lg:spacer-125' />
 
                 <MapSection />
@@ -27,3 +31,9 @@ const Shop = () => {
 };
 
 export default Shop;
+
+export const getStaticProps: GetStaticProps = async () => {
+    const shopItems: ShopItemType[] = shopItemsData;
+
+    return { props: { shopItems: shopItems } };
+};
