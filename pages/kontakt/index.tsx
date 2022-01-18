@@ -1,6 +1,16 @@
 import Head from 'next/head';
 import ContactSection from '../../components/layout/ContactFormSection';
 import MapSection from '../../components/layout/MapSection';
+import { GetStaticProps } from 'next';
+
+type Values = {
+    name: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+    dataSecurity: boolean;
+};
 
 const Kontakt = () => {
     return (

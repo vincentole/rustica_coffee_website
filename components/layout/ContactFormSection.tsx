@@ -1,4 +1,5 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
+
 import { useRouter } from 'next/router';
 import * as Yup from 'yup';
 import Button from '../UI/Button';
@@ -54,8 +55,8 @@ const ContactFormSection = () => {
                     initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={async (values, actions) => {
-                        const sendForm = async () => {
-                            const response = await fetch('https://formspree.io/f/xzbodezv', {
+                        const sendForm = async (values: Values) => {
+                            const response = await fetch('/api/kontakt', {
                                 method: 'POST',
                                 body: JSON.stringify(values),
                                 headers: {
@@ -71,7 +72,7 @@ const ContactFormSection = () => {
                         };
 
                         try {
-                            await sendForm();
+                            await sendForm(values);
                             actions.resetForm();
                             actions.setSubmitting(false);
                             router.push('/kontakt/senden-erfolgreich');
