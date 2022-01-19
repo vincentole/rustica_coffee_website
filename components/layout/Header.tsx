@@ -5,14 +5,14 @@ import { RootState } from '../../store/store';
 import Cart from '../cart/Cart';
 import BurgerMenuOpen from '../Icons/BurgerMenuOpen';
 import Logo from '../Icons/Logo';
-import CartButton from '../Shop/CartButton';
+import CartButton from '../cart/CartButton';
 import ActiveLink from '../UI/ActiveLink';
 import MobileNav from './MobileNav';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileNavShown, setMobileNavShown] = useState(false);
-    const cartShown = useSelector((state: RootState) => state.ui.cartShown);
+    const cartShown = useSelector((state: RootState) => state.cart.cartShown);
 
     // Mobile nav menu
     useEffect(() => {

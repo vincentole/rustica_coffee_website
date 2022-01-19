@@ -36,6 +36,9 @@ module.exports = {
             transitionProperty: {
                 'border-color': 'border-color',
             },
+            animation: {
+                'pulse-once': 'pulse 3s ease-in-out',
+            },
         },
     },
     plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],

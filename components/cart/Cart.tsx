@@ -4,21 +4,25 @@ import CartCloseIcon from '../Icons/CloseIcon';
 import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
-import { uiActions } from '../../store/uiSlice';
+import { cartActions } from '../../store/cartSlice';
+import NewItems from './NewItems';
 
 const Cart = () => {
-    const cartShown = useSelector((state: RootState) => state.ui.cartShown);
-    const cartItems = useSelector((state: RootState) => state.cart.items);
     const dispatch = useDispatch<AppDispatch>();
+    const cartShown = useSelector((state: RootState) => state.cart.cartShown);
+    const cartItems = useSelector((state: RootState) => state.cart.items);
+    const amountItemsSeen = useSelector((state: RootState) => state.cart.seenItemsAmount);
 
     const cartList = cartItems.map((item) => <CartItem key={item.id} item={item} />);
     const cartTotal = cartItems.reduce((total, item) => total + item.price * item.amount, 0);
+    const cartItemAmount = cartItems.reduce((total, item) => total + item.amount, 0);
+    const amountItemsNotSeen = cartItemAmount - amountItemsSeen;
 
     return (
         <Transition show={cartShown} as={Fragment}>
             <Dialog
                 open={cartShown}
-                onClose={() => dispatch(uiActions.closeCart())}
+                onClose={() => dispatch(cartActions.closeCart())}
                 className='fixed z-50 inset-0 overflow-y-auto theme-text-body-m lg:theme-text-body'
             >
                 {/* Backdrop */}
@@ -51,7 +55,7 @@ const Cart = () => {
                                 <button
                                     aria-label='Warenkorb schließen'
                                     type='button'
-                                    onClick={() => dispatch(uiActions.closeCart())}
+                                    onClick={() => dispatch(cartActions.closeCart())}
                                 >
                                     <CartCloseIcon className='h-[18px] w-[18px]' />
                                 </button>
@@ -60,17 +64,14 @@ const Cart = () => {
                             <div className='spacer-12' />
                             <Dialog.Title className='flex gap-[35px] md:gap-[50px] justify-between items-end'>
                                 <h2 className='theme-text-h3-m lg:theme-text-h3'>Warenkorb</h2>
-                                <span>{`${cartItems.length}`} Products</span>
+                                <span>{`${cartItemAmount}`} Products</span>
                             </Dialog.Title>
                         </div>
                         <Dialog.Description></Dialog.Description>
                         <div className='spacer-35' />
                         <div className='cstm-container bg-theme-kraftpapier'>
-                            <div>
-                                <div className='spacer-12' />
-                                <p>1 Produkt wurde erfolgreich zum Warenkorb hinzugefügt</p>
-                                <div className='spacer-12' />
-                            </div>
+                            <NewItems amountItemsNotSeen={amountItemsNotSeen} />
+                            
                         </div>
                         <div className='cstm-container'>
                             <div className='spacer-20' />
@@ -108,7 +109,7 @@ const Cart = () => {
                             <div className='spacer-35' />
                             <div className='flex justify-center'>
                                 <button
-                                    onClick={() => dispatch(uiActions.closeCart())}
+                                    onClick={() => dispatch(cartActions.closeCart())}
                                     className='py-3 px-12 rounded-[5px] border-[3px] border-theme-kraftpapier bg-theme-kraftpapier text-theme-anthrazit hover:bg-theme-hover-gray hover:border-theme-hover-gray hover:text-theme-white active:bg-theme-kraftpapier active:border-theme-kraftpapier active:text-theme-anthrazit'
                                 >
                                     zur Kasse
