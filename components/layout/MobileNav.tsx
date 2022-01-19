@@ -45,7 +45,7 @@ const MobileNav = ({ onClose, isShown }: Props) => {
                     <button
                         onClick={onClose}
                         type='button'
-                        aria-label='close menu'
+                        aria-label='Navigation schließen'
                         className='p-2 hover:opacity-70'
                     >
                         <BurgerMenuClose className='w-[22px] h-[22px]' />

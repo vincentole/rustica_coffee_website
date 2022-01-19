@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Cart from '../cart/Cart';
 import BurgerMenuOpen from '../Icons/BurgerMenuOpen';
 import Logo from '../Icons/Logo';
 import ShopIcon from '../Icons/ShopIcon';
@@ -9,6 +10,16 @@ import MobileNav from './MobileNav';
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileNavShown, setMobileNavShown] = useState(false);
+    const [cartIsOpen, setCartIsOpen] = useState(true);
+
+    // Cart UI
+    const openCart = () => {
+        setCartIsOpen(true);
+    };
+
+    const closeCart = () => {
+        setCartIsOpen(false);
+    };
 
     // Mobile nav menu
     useEffect(() => {
@@ -47,7 +58,7 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-250 ease-in-out ${
+            className={`fixed top-0 left-0 right-0 z-20 transition-all duration-250 ease-in-out ${
                 isScrolled
                     ? 'bg-theme-white text-theme-anthrazit shadow-md '
                     : 'bg-theme-transparent text-theme-white'
@@ -65,7 +76,7 @@ const Header = () => {
                     className='md:hidden p-2'
                     onClick={onMobileNavOpenHandler}
                     type='button'
-                    aria-label='Open Mobile Navigation'
+                    aria-label='Navigation öffnen'
                 >
                     <BurgerMenuOpen className='w-[24px] h-[13px]' />
                 </button>
@@ -90,9 +101,14 @@ const Header = () => {
                             <ActiveLink type='desktopNav' href='/shop' isScrolled={isScrolled}>
                                 Shop
                             </ActiveLink>
-                            <button type='button' aria-label='open your shopping cart'>
+                            <button type='button' aria-label='Warenkorb öffnen'>
                                 <ShopIcon className='w-[17px] h-[20px]' />
                             </button>
+                            <Cart
+                                onOpenCart={openCart}
+                                onCloseCart={closeCart}
+                                cartIsOpen={cartIsOpen}
+                            />
                         </li>
                     </ul>
                 </nav>
