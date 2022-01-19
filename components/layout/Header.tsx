@@ -1,25 +1,18 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 import Cart from '../cart/Cart';
 import BurgerMenuOpen from '../Icons/BurgerMenuOpen';
 import Logo from '../Icons/Logo';
-import ShopIcon from '../Icons/ShopIcon';
-import ActiveLink from './ActiveLink';
+import CartButton from '../Shop/CartButton';
+import ActiveLink from '../UI/ActiveLink';
 import MobileNav from './MobileNav';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileNavShown, setMobileNavShown] = useState(false);
-    const [cartIsOpen, setCartIsOpen] = useState(true);
-
-    // Cart UI
-    const openCart = () => {
-        setCartIsOpen(true);
-    };
-
-    const closeCart = () => {
-        setCartIsOpen(false);
-    };
+    const cartShown = useSelector((state: RootState) => state.ui.cartShown);
 
     // Mobile nav menu
     useEffect(() => {
@@ -58,11 +51,11 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-20 transition-all duration-250 ease-in-out ${
+            className={`fixed top-0 left-0 right-0 z-20 transition-colors duration-250 ease-in-out ${
                 isScrolled
                     ? 'bg-theme-white text-theme-anthrazit shadow-md '
                     : 'bg-theme-transparent text-theme-white'
-            } `}
+            } ${cartShown ? 'pr-[45px]' : ''}`}
         >
             <MobileNav onClose={onMobileNavCloseHandler} isShown={mobileNavShown} />
             <div className='cstm-container-nav h-[55px] flex justify-between items-center xl:max-w-[1280px] xl:mx-auto'>
@@ -71,15 +64,18 @@ const Header = () => {
                         <Logo className='w-[35px] h-[35px]' />
                     </a>
                 </Link>
+                <div className='flex gap-[24px] items-center'>
+                    <CartButton className='md:hidden'/>
+                    <button
+                        className='md:hidden p-2'
+                        onClick={onMobileNavOpenHandler}
+                        type='button'
+                        aria-label='Navigation öffnen'
+                    >
+                        <BurgerMenuOpen className='w-[24px] h-[13px]' />
+                    </button>
+                </div>
 
-                <button
-                    className='md:hidden p-2'
-                    onClick={onMobileNavOpenHandler}
-                    type='button'
-                    aria-label='Navigation öffnen'
-                >
-                    <BurgerMenuOpen className='w-[24px] h-[13px]' />
-                </button>
                 <nav className='hidden md:inline-block'>
                     <ul className='flex gap-[60px] items-center'>
                         <li>
@@ -101,14 +97,8 @@ const Header = () => {
                             <ActiveLink type='desktopNav' href='/shop' isScrolled={isScrolled}>
                                 Shop
                             </ActiveLink>
-                            <button type='button' aria-label='Warenkorb öffnen'>
-                                <ShopIcon className='w-[17px] h-[20px]' />
-                            </button>
-                            <Cart
-                                onOpenCart={openCart}
-                                onCloseCart={closeCart}
-                                cartIsOpen={cartIsOpen}
-                            />
+                            <CartButton />
+                            <Cart />
                         </li>
                     </ul>
                 </nav>

@@ -3,14 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-    
-    input[type='text'], input[type='email'] {
+    input[type='text'],
+    input[type='email'] {
         @apply px-[15px] py-[10px] focus:bg-theme-light-gray border-t-transparent border-l-transparent border-r-transparent border-b-[3px] border-theme-anthrazit focus:outline-none;
     }
     textarea {
         @apply h-[170px] px-[15px] py-[10px] focus:bg-theme-light-gray border-t-transparent border-l-transparent border-r-transparent border-b-[3px] border-theme-anthrazit focus:outline-none;
     }
-   
 }
 
 @layer utilities {
@@ -29,12 +28,13 @@
     .spacer-12 {
         @apply pt-[12px];
     }
-    .spacer-24 {
-        @apply pt-[24px];
-    }
     .spacer-20 {
         @apply pt-[20px];
     }
+    .spacer-24 {
+        @apply pt-[24px];
+    }
+
     .spacer-35 {
         @apply pt-[35px];
     }
@@ -94,9 +94,9 @@
 
 @layer components {
     input:not(:placeholder-shown).bg-no-placeholder {
-        background: #E9E9E9;
+        background: #e9e9e9;
     }
     textarea:not(:placeholder-shown).bg-no-placeholder {
-        background: #E9E9E9;
+        background: #e9e9e9;
     }
 }

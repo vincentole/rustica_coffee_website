@@ -5,7 +5,7 @@ import ShopItemDetails from '../../../components/Shop/ShopItemDetails';
 import ShopSectionTopProducts from '../../../components/Shop/ShopSectionTopProducts';
 
 import shopItemsData from '../../../data/shopItems';
-import ShopItemType from '../../../types/shopItem';
+import ShopItemType from '../../../types/shopItemType';
 
 const ItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => {
     return (

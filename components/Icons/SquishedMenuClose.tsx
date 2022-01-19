@@ -2,7 +2,7 @@ type Props = {
     className?: string;
 };
 
-const BurgerMenuClose = ({ className }: Props) => (
+const SquishedMenuClose = ({ className }: Props) => (
     <svg
         className={className}
         width='22'
@@ -18,4 +18,4 @@ const BurgerMenuClose = ({ className }: Props) => (
         />
     </svg>
 );
-export default BurgerMenuClose;
+export default SquishedMenuClose;

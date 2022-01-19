@@ -2,7 +2,7 @@ type Props = {
     className?: string;
 };
 
-const CartCloseIcon = ({ className }: Props) => (
+const CloseIcon = ({ className }: Props) => (
     <svg
         className={className}
         width='21'
@@ -18,4 +18,4 @@ const CartCloseIcon = ({ className }: Props) => (
         />
     </svg>
 );
-export default CartCloseIcon;
+export default CloseIcon;

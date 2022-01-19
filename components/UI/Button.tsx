@@ -24,7 +24,7 @@ type PropsButton = {
 
     type: 'button';
     btnType: 'button' | 'submit' | 'reset';
-    disabled: boolean;
+    disabled?: boolean;
     onClick?: () => void;
 };
 
@@ -58,7 +58,7 @@ const Button: React.FC<Props> = (props) => {
 
     if (type === 'button') {
         return (
-            <button type={props.btnType} disabled={props.disabled} className={`${baseStyle} ${variantStyle}`}>
+            <button type={props.btnType} disabled={props.disabled ? props.disabled : false} className={`${baseStyle} ${variantStyle}`}>
                 {props.children}
             </button>
         );

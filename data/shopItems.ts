@@ -4,14 +4,11 @@ const shopItemsData = [
     {
         id: 'costa-rica',
         title: 'Costa Rica',
-        price: {
-            min: 6.9,
-            max: 26.9,
-        },
         aroma: 'Mild',
         cookingUtilities: ['French Press'],
-        form: ['gemahlen', 'bohne'],
-        weight: 250,
+        allVariants: ['gemahlen', 'Bohnen'],
+        allWeights: [250, 500],
+        prices: [6.9, 12],
         summary:
             'Costa Rica Filterkaffee ist äußerst ergiebig und hat praktisch keine Säure. Den Gaumen umschmeichelt ein vollmundiges Haselnussaroma. Gleich probieren!',
         description:
@@ -19,17 +16,15 @@ const shopItemsData = [
         readyForDelivery: true,
         img: coffeeCostaRicaImage,
     },
+
     {
         id: 'costa-rica-strong',
         title: 'Costa Rica Strong',
-        price: {
-            min: 6.5,
-            max: 26.9,
-        },
         aroma: 'Stark',
         cookingUtilities: ['French Press'],
-        form: ['gemahlen', 'Bohne'],
-        weight: 250,
+        allVariants: ['gemahlen', 'Bohnen'],
+        allWeights: [250, 500],
+        prices: [6.9, 12],
         summary:
             'Costa Rica Filterkaffee ist äußerst ergiebig und hat praktisch keine Säure. Den Gaumen umschmeichelt ein vollmundiges Haselnussaroma. Gleich probieren!',
         description:
@@ -40,14 +35,12 @@ const shopItemsData = [
     {
         id: 'costa-rica-blend',
         title: 'Costa Rica Blend',
-        price: {
-            min: 6,
-            max: 26.9,
-        },
+
         aroma: 'Mild',
         cookingUtilities: ['French Press'],
-        form: ['gemahlen', 'Bohne'],
-        weight: 250,
+        allVariants: ['gemahlen', 'Bohnen'],
+        allWeights: [250, 500],
+        prices: [6.9, 12],
         summary:
             'Costa Rica Filterkaffee ist äußerst ergiebig und hat praktisch keine Säure. Den Gaumen umschmeichelt ein vollmundiges Haselnussaroma. Gleich probieren!',
         description:
@@ -58,14 +51,12 @@ const shopItemsData = [
     {
         id: 'costa-rica-smooth',
         title: 'Costa Rica Smooth',
-        price: {
-            min: 7.9,
-            max: 26.9,
-        },
+
         aroma: 'Sehr mild',
         cookingUtilities: ['French Press'],
-        form: ['gemahlen', 'Bohne'],
-        weight: 250,
+        allVariants: ['gemahlen', 'Bohnen'],
+        allWeights: [250, 500],
+        prices: [6.9, 12],
         summary:
             'Costa Rica Filterkaffee ist äußerst ergiebig und hat praktisch keine Säure. Den Gaumen umschmeichelt ein vollmundiges Haselnussaroma. Gleich probieren!',
         description:

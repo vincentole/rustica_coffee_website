@@ -1,14 +1,11 @@
 type ShopItemType = {
     id: string;
     title: string;
-    price: {
-        min: number;
-        max: number;
-    };
+    prices: number[];
     aroma: string;
     cookingUtilities: string[];
-    form: string[];
-    weight: number;
+    allVariants: string[];
+    allWeights: number[];
     summary: string;
     description: string;
     readyForDelivery: boolean;

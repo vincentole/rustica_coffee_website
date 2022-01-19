@@ -1,7 +1,5 @@
-import Link from 'next/link';
-import { useState } from 'react';
-import BurgerMenuClose from '../Icons/BurgerMenuClose';
-import ActiveLink from './ActiveLink';
+import CloseIcon from '../Icons/CloseIcon';
+import ActiveLink from '../UI/ActiveLink';
 
 type Props = {
     onClose: () => void;
@@ -48,7 +46,7 @@ const MobileNav = ({ onClose, isShown }: Props) => {
                         aria-label='Navigation schließen'
                         className='p-2 hover:opacity-70'
                     >
-                        <BurgerMenuClose className='w-[22px] h-[22px]' />
+                        <CloseIcon className='w-[22px] h-[22px]' />
                     </button>
                 </div>
             </div>

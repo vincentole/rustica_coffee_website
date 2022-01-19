@@ -5,11 +5,11 @@ import IconKaffeeSchaufel from '../Icons/IconKaffeeSchaufel';
 
 type Props = {
     title: string;
-    price: { min: number; max: number };
+    prices: number[];
     img: StaticImageData;
 };
 
-const ShopItem: React.FC<Props> = ({ img, title, price }) => {
+const ShopItem: React.FC<Props> = ({ img, title, prices }) => {
 
     return (
         <div className='space-y-1'>
@@ -26,7 +26,7 @@ const ShopItem: React.FC<Props> = ({ img, title, price }) => {
             </div>
             <h3 className='theme-text-subh-m'>{title}</h3>
             <div className='theme-text-body-m text-theme-medium-gray lg:theme-text-body'>
-                {`${price.min.toFixed(2)}€ – ${price.max.toFixed(2)}€`}
+                {`${prices[0].toFixed(2)}€ – ${prices[prices.length-1].toFixed(2)}€`}
             </div>
             <div className='flex items-center gap-2 text-theme-anthrazit'>
                 <IconKaffeeBohnen className='w-[12px] h-[14px] lg:w-[17px] lg:h-[20px]' />

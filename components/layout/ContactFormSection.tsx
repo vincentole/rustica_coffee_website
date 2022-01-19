@@ -3,7 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useRouter } from 'next/router';
 import * as Yup from 'yup';
 import Button from '../UI/Button';
-import FormErrorDiv from './FormErrorDiv';
+import FormErrorDiv from '../UI/FormErrorDiv';
 
 type Values = {
     name: string;

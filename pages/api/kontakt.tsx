@@ -1,14 +1,5 @@
-type Values = {
-    name: string;
-    email: string;
-    phone: string;
-    subject: string;
-    message: string;
-    dataSecurity: boolean;
-};
-
 export default async function handler(
-    req: { method: string; body: Values },
+    req: { method: string; body: string },
     res: {
         status: (arg0: number) => {
             (): any;
@@ -19,11 +10,11 @@ export default async function handler(
 ) {
     if (req.method === 'POST') {
         const url = process.env.FORMSPREE_POST_API;
-        console.log(url);
-        const sendForm = async (values: Values) => {
+        console.log(req.body);
+        const sendForm = async (values: string) => {
             const response = await fetch(String(url!), {
                 method: 'POST',
-                body: JSON.stringify(values),
+                body: values,
                 headers: {
                     Accept: 'application/json',
                 },
@@ -36,6 +27,7 @@ export default async function handler(
 
         try {
             await sendForm(req.body);
+
             res.status(200).json({ message: 'Message sent successfully.' });
         } catch (error) {
             console.log(error);
@@ -45,28 +37,3 @@ export default async function handler(
         // Other Requests
     }
 }
-
-// type Props = {
-//     sendForm: (values: Values) => Promise<void>;
-// };
-
-// export const getStaticProps: GetStaticProps = async () => {
-//     console.log('env message', process.env.TEST);
-//     const url = process.env.FORMSPREE_POST_API;
-
-//     const sendForm = async (values: Values) => {
-//         const response = await fetch(url!, {
-//             method: 'POST',
-//             body: JSON.stringify(values),
-//             headers: {
-//                 Accept: 'application/json',
-//             },
-//         });
-
-//         if (!response.ok) {
-//             throw new Error(`Sending message failed. \n Status: ${response.status}`);
-//         }
-//     };
-
-//     return { props: { sendForm: sendForm } };
-// };
