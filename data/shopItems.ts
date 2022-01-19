@@ -7,8 +7,8 @@ const shopItemsData = [
         aroma: 'Mild',
         cookingUtilities: ['French Press'],
         allVariants: ['gemahlen', 'Bohnen'],
-        allWeights: [250, 500],
-        prices: [6.9, 12],
+        allWeights: [250, 500], // order according to prices
+        prices: [6.9, 12], // order according to weights
         summary:
             'Costa Rica Filterkaffee ist äußerst ergiebig und hat praktisch keine Säure. Den Gaumen umschmeichelt ein vollmundiges Haselnussaroma. Gleich probieren!',
         description:

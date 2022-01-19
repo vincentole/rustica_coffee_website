@@ -35,9 +35,13 @@ const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => 
                     <div className='lg:basis-0 lg:flex-grow lg:max-w-[400px]'>
                         <h2 className='theme-text-h2-m lg:theme-text-h2 '>{shopItem.title}</h2>
                         <div className='spacer-12' />
-                        <div className='theme-text-subh-m'>{`${shopItem.prices[0].toFixed(
-                            2,
-                        )}€ – ${shopItem.prices[shopItem.prices.length-1].toFixed(2)}€`}</div>
+                        <div className='theme-text-subh-m'>
+                            {shopItem.prices.length > 1
+                                ? `${shopItem.prices[0].toFixed(2)}€ – ${shopItem.prices[
+                                      shopItem.prices.length - 1
+                                  ].toFixed(2)}€`
+                                : `${shopItem.prices[0].toFixed(2)}€`}
+                        </div>
                         <div className='spacer-35' />
                         <p className='theme-text-body-m lg:theme-text-body'>{shopItem.summary}</p>
                         <div className='spacer-40' />
@@ -47,14 +51,24 @@ const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => 
                                 amount: Yup.string().required('Bitte wähle eine Menge aus.'),
                             })}
                             onSubmit={(values, actions) => {
-                                // dispatch(cartActions.addToCart({
-                                //     amount: 1,
-                                //     bagSize: Number(values.amount.split(' ')[0]),
-                                //     id: shopItem.id,
-                                //     price: shopItem.price,
-                                //     title: shopItem.title
-                                // }));
-                                console.log(values);
+                                const bagSize = Number(values.amount.split(' ')[0]);
+                                const weightIndex = shopItem.allWeights.findIndex(
+                                    (w) => w === bagSize,
+                                );
+                                const variant = values.amount.split(' ')[1];
+
+                                dispatch(
+                                    cartActions.addOneToCart({
+                                        id: `${shopItem.id}-${bagSize}-${variant.toLowerCase()}`,
+                                        title: shopItem.title,
+                                        amount: 1,
+                                        bagSize: Number(values.amount.split(' ')[0]),
+                                        variant: variant,
+                                        price: shopItem.prices[weightIndex],
+                                        img: shopItem.img,
+                                    }),
+                                );
+
                                 actions.resetForm();
                                 actions.setSubmitting(false);
                             }}
@@ -71,7 +85,10 @@ const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => 
                                             as='select'
                                             className='rounded-[5px] border-[3px] border-theme-anthrazit text-theme-anthrazit h-[50px] focus:border-theme-kraftpapier focus:ring-theme-kraftpapier'
                                         >
-                                            <option hidden defaultValue={'Wie viel Kaffee brauchst du?'}>
+                                            <option
+                                                hidden
+                                                defaultValue={'Wie viel Kaffee brauchst du?'}
+                                            >
                                                 Wie viel Kaffee brauchst du?
                                             </option>
                                             <option value='250 gemahlen'>250g gemahlen</option>

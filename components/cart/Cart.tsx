@@ -12,6 +12,7 @@ const Cart = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     const cartList = cartItems.map((item) => <CartItem key={item.id} item={item} />);
+    const cartTotal = cartItems.reduce((total, item) => total + item.price * item.amount, 0);
 
     return (
         <Transition show={cartShown} as={Fragment}>
@@ -43,7 +44,7 @@ const Cart = () => {
                     leaveFrom='opacity-100 scale-200'
                     leaveTo='opacity-0 scale-90'
                 >
-                    <div className='relative ml-auto flex flex-col bg-white h-screen lg:w-[600px]'>
+                    <div className='relative ml-auto flex flex-col bg-white min-h-screen lg:w-[600px]'>
                         <div className='cstm-container'>
                             <div className='spacer-20' />
                             <div className='flex justify-end'>
@@ -59,7 +60,7 @@ const Cart = () => {
                             <div className='spacer-12' />
                             <Dialog.Title className='flex gap-[35px] md:gap-[50px] justify-between items-end'>
                                 <h2 className='theme-text-h3-m lg:theme-text-h3'>Warenkorb</h2>
-                                <span>3 Products</span>
+                                <span>{`${cartItems.length}`} Products</span>
                             </Dialog.Title>
                         </div>
                         <Dialog.Description></Dialog.Description>
@@ -74,17 +75,36 @@ const Cart = () => {
                         <div className='cstm-container'>
                             <div className='spacer-20' />
                             <ul>
-                                {cartList}
+                                {cartList.length === 0 ? (
+                                    <li className='pb-[25px] pt-[25px]'>
+                                        Es sind noch keine Produkte im Warenkorb
+                                    </li>
+                                ) : (
+                                    cartList
+                                )}
                             </ul>
                         </div>
                         <div className='cstm-container text-theme-white bg-theme-anthrazit mt-auto'>
                             <div className='spacer-40' />
-                            <div>Zwischensumme</div>
-                            <div>Versandkosten</div>
+                            <div className='flex gap-4 justify-between'>
+                                <div>Zwischensumme</div>
+                                <div>{`${cartTotal.toFixed(2)}€`}</div>
+                            </div>
+                            <div className='flex gap-4 justify-between'>
+                                <div>Versandkosten</div>
+                                <div>{cartItems.length > 0 ? '3.49€' : '0.00€'}</div>
+                            </div>
                             <div className='spacer-24' />
                             <div className='spacer-0 border-t border-theme-light-gray' />
                             <div className='spacer-24' />
-                            <div>Gesamtbetrag</div>
+                            <div className='flex gap-4 justify-between'>
+                                <div>Gesamtbetrag</div>
+                                <div>
+                                    {cartItems.length > 0
+                                        ? `${(cartTotal + 3.49).toFixed(2)}€`
+                                        : '0.00€'}
+                                </div>
+                            </div>
                             <div className='spacer-35' />
                             <div className='flex justify-center'>
                                 <button

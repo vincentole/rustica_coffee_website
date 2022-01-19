@@ -37,7 +37,6 @@ export default ItemDetails;
 export const getStaticProps: GetStaticProps = async (context) => {
     const shopItems: ShopItemType[] = shopItemsData;
     const shopItem = shopItems.filter((item) => item.id === context.params!.shopItemId);
-    console.log(shopItem);
     return { props: { shopItem: shopItem[0] } };
 };
 
