@@ -5,7 +5,7 @@ import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { cartActions } from '../../store/cartSlice';
-import NewItems from './NewItems';
+import NewItems from './NewItemsAmountText';
 
 const Cart = () => {
     const dispatch = useDispatch<AppDispatch>();
