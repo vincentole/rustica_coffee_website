@@ -102,7 +102,7 @@ This is my first major project using Next.js and form integration.
 
 In this section I highlight some code snippets I find valuable to share. Refer to the [section below](#roadmap-&-continued-development) for more concepts and features I implemented.
 
-#### Animate once
+#### Animation
 
 Animating a component once based on a dependency, here `amountCartItems`.
 
@@ -120,7 +120,7 @@ useEffect(() => {
 return (
     <button
         // ... //
-        className={`${className} ${animate && 'animate-pop-once'}`}
+        className={` ${className} ${animate && 'animate-pop-once'}`}
     >
         {/* ... */}
     </button>
