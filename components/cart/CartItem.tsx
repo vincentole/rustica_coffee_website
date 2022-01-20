@@ -24,7 +24,7 @@ const CartItem: React.FC<{ item: CartItemType }> = ({ item }) => {
 
     return (
         <li className='pb-[25px] pt-[25px] border-t border-theme-light-gray first:border-none'>
-            <div className='flex justify-between'>
+            <div className='flex justify-between gap-4'>
                 <div className='relative w-[110px] h-[124px] bg-theme-kraftpapier'>
                     <Image
                         src={item.img}

@@ -1,7 +1,13 @@
-import ShopItem from './ShopItemTopProducts';
+import ShopItemTopProducts from './ShopItemTopProducts';
 import Button from '../UI/Button';
+import { randomNFromArray } from '../../lib/utilities';
+
+import shopItemsData from '../../data/shopItemsData';
 
 const ShopSectionTopProducts = () => {
+    const randomItems = randomNFromArray(shopItemsData, 4);
+    const itemList = randomItems.map((item) => <ShopItemTopProducts key={item.id} item={item} />);
+
     return (
         <section className='bg-theme-anthrazit text-theme-white'>
             <div className='cstm-container'>
@@ -12,10 +18,7 @@ const ShopSectionTopProducts = () => {
                         <br />
                         Kaffee Sorten
                     </h2>
-                    <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
-                    <ShopItem />
+                    {itemList}
                 </div>
             </div>
             <div className='spacer-40 lg:spacer-80' />

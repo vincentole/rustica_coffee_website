@@ -4,7 +4,7 @@ import MapSection from '../../../components/layout/MapSection';
 import ShopItemDetails from '../../../components/Shop/ShopItemDetails';
 import ShopSectionTopProducts from '../../../components/Shop/ShopSectionTopProducts';
 
-import shopItemsData from '../../../data/shopItems';
+import shopItemsData from '../../../data/shopItemsData';
 import ShopItemType from '../../../types/shopItemType';
 
 const ItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => {

@@ -38,7 +38,7 @@ module.exports = {
             },
             animation: {
                 'pulse-once': 'pulseOnce 200ms ease-in-out',
-                'pop-once': 'popOnce 500ms ease',
+                'pop-once': 'popOnce 350ms ease',
             },
             keyframes: {
                 pulseOnce: {

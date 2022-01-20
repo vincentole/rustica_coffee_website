@@ -17,7 +17,7 @@ const CartButton: React.FC<Props> = ({ className }) => {
 
     useEffect(() => {
         setAnimate(true);
-        const timeout = setTimeout(() => setAnimate(false), 200);
+        const timeout = setTimeout(() => setAnimate(false), 350); // timing should be equivalent to animation timing
         return () => clearTimeout(timeout);
     }, [amountCartItems]);
 

@@ -11,12 +11,10 @@ const Cart = () => {
     const dispatch = useDispatch<AppDispatch>();
     const cartShown = useSelector((state: RootState) => state.cart.cartShown);
     const cartItems = useSelector((state: RootState) => state.cart.items);
-    
 
     const cartList = cartItems.map((item) => <CartItem key={item.id} item={item} />);
     const cartTotal = cartItems.reduce((total, item) => total + item.price * item.amount, 0);
     const cartItemAmount = cartItems.reduce((total, item) => total + item.amount, 0);
-    
 
     return (
         <Transition show={cartShown} as={Fragment}>
@@ -64,14 +62,15 @@ const Cart = () => {
                             <div className='spacer-12' />
                             <Dialog.Title className='flex gap-[35px] md:gap-[50px] justify-between items-end'>
                                 <h2 className='theme-text-h3-m lg:theme-text-h3'>Warenkorb</h2>
-                                <span>{`${cartItemAmount}`} Products</span>
+                                <span>{`${cartItemAmount} Produkt${
+                                    cartItemAmount > 1 || cartItemAmount === 0 ? 'e' : ''
+                                }`}</span>
                             </Dialog.Title>
                         </div>
                         <Dialog.Description></Dialog.Description>
                         <div className='spacer-35' />
                         <div className='cstm-container bg-theme-kraftpapier'>
                             <NewItems />
-                            
                         </div>
                         <div className='cstm-container'>
                             <div className='spacer-20' />

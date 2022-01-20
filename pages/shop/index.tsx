@@ -3,7 +3,7 @@ import Head from 'next/head';
 import MapSection from '../../components/layout/MapSection';
 import ShopSection from '../../components/Shop/ShopSection';
 
-import shopItemsData from '../../data/shopItems';
+import shopItemsData from '../../data/shopItemsData';
 import ShopItemType from '../../types/shopItemType';
 
 const Shop: React.FC<{ shopItems: ShopItemType[] }> = ({ shopItems }) => {
