@@ -114,19 +114,25 @@ const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => 
                         </Formik>
                         <div className='spacer-90' />
                         <div className='flex items-center justify-center gap-4 theme-text-body-m lg:theme-text-body'>
-                            <div className='max-w-[70px]'>
+                            <div className='w-[70px] flex justify-center items-center'>
                                 <IconKaffeeBohnen className='w-[46px] h-[51px] lg:w-[55px] lg:h-[62px]' />
-                                <div className='spacer-20' />
+                            </div>
+                            <div className='w-[70px] flex justify-center items-center'>
+                                <FrenchPressIcon className='w-[36px] h-[46px] lg:w-[44px] lg:h-[55px]' />
+                            </div>
+                            <div className='w-[70px] flex justify-center items-center'>
+                                <IconKaffeeSchaufel className='w-[45px] h-[47px] lg:w-[53px] lg:h-[56px]' />
+                            </div>
+                        </div>
+                        <div className='spacer-20' />
+                        <div className='flex items-start justify-center gap-4 theme-text-body-m lg:theme-text-body'>
+                            <div className='w-[70px]'>
                                 <div>{shopItem.aroma} geröstet</div>
                             </div>
-                            <div className='max-w-[70px]'>
-                                <FrenchPressIcon className='w-[36px] h-[46px] lg:w-[44px] lg:h-[55px]' />
-                                <div className='spacer-20' />
+                            <div className='w-[70px]'>
                                 <div>Für {shopItem.cookingUtilities}</div>
                             </div>
-                            <div className='max-w-[70px]'>
-                                <IconKaffeeSchaufel className='w-[45px] h-[47px] lg:w-[53px] lg:h-[56px]' />
-                                <div className='spacer-20' />
+                            <div className='w-[70px]'>
                                 <div>
                                     {shopItem.allVariants.length === 2
                                         ? `Gemahlen oder als Bohne`
