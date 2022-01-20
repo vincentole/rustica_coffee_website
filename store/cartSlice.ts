@@ -18,29 +18,34 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addOneToCart: (state, action: PayloadAction<CartItemType>) => {
-            const item = state.items.find((item) => item.id === action.payload.id);
-
-            if (item) item.amount += 1;
-            else state.items.push(action.payload);
+            const currItem = state.items.find((item) => item.id === action.payload.id);
 
             if (state.cartShown) {
-                state.seenItemsAmount =
-                    state.items.reduce((total, item) => total + item.amount, 0) - 1;
+                state.seenItemsAmount = state.items.reduce((total, item) => total + item.amount, 0);
             }
+
+            if (currItem) currItem.amount += 1;
+            else state.items.push(action.payload);
         },
 
         removeOneFromCart: (state, action: PayloadAction<{ id: string }>) => {
-            const item = state.items.find((item) => item.id === action.payload.id);
-
-            if (item && item.amount > 1) item.amount -= 1;
-            else state.items = state.items.filter((item) => item.id !== action.payload.id);
+            const currItem = state.items.find((item) => item.id === action.payload.id);
 
             if (state.cartShown) {
-                state.seenItemsAmount =
-                    state.items.reduce((total, item) => total + item.amount, 0) + 1;
+                state.seenItemsAmount = state.items.reduce((total, item) => total + item.amount, 0);
             }
+
+            if (currItem && currItem.amount > 1) currItem.amount -= 1;
+            else state.items = state.items.filter((item) => item.id !== action.payload.id);
         },
+
         removeProduct: (state, action: PayloadAction<{ id: string }>) => {
+            const currItem = state.items.find((item) => item.id === action.payload.id);
+
+            if (state.cartShown) {
+                state.seenItemsAmount = state.items.reduce((total, item) => total + item.amount, 0);
+            }
+
             state.items = state.items.filter((item) => item.id !== action.payload.id);
         },
 

@@ -37,7 +37,18 @@ module.exports = {
                 'border-color': 'border-color',
             },
             animation: {
-                'pulse-once': 'pulse 3s ease-in-out',
+                'pulse-once': 'pulseOnce 200ms ease-in-out',
+                'pop-once': 'popOnce 500ms ease',
+            },
+            keyframes: {
+                pulseOnce: {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.2' },
+                },
+                popOnce: {
+                    '0%, 100%': { transform: 'scale(1)' },
+                    '50%': { transform: 'scale(1.05)' },
+                },
             },
         },
     },

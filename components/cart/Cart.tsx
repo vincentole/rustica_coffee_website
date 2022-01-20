@@ -11,12 +11,12 @@ const Cart = () => {
     const dispatch = useDispatch<AppDispatch>();
     const cartShown = useSelector((state: RootState) => state.cart.cartShown);
     const cartItems = useSelector((state: RootState) => state.cart.items);
-    const amountItemsSeen = useSelector((state: RootState) => state.cart.seenItemsAmount);
+    
 
     const cartList = cartItems.map((item) => <CartItem key={item.id} item={item} />);
     const cartTotal = cartItems.reduce((total, item) => total + item.price * item.amount, 0);
     const cartItemAmount = cartItems.reduce((total, item) => total + item.amount, 0);
-    const amountItemsNotSeen = cartItemAmount - amountItemsSeen;
+    
 
     return (
         <Transition show={cartShown} as={Fragment}>
@@ -70,7 +70,7 @@ const Cart = () => {
                         <Dialog.Description></Dialog.Description>
                         <div className='spacer-35' />
                         <div className='cstm-container bg-theme-kraftpapier'>
-                            <NewItems amountItemsNotSeen={amountItemsNotSeen} />
+                            <NewItems />
                             
                         </div>
                         <div className='cstm-container'>
