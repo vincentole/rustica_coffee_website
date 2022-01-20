@@ -98,9 +98,9 @@ Rustica Coffee Website is a website with an integrated store. The coffee shop is
 
 ### What I Learned Highlights
 
-This is my first major project using Next.js and form integration.
+I present to you my first major project using Next.js and form integration.
 
-In this section I highlight some code snippets I find valuable to share. Refer to the [section below](#roadmap-&-continued-development) for more concepts and features I implemented.
+In this section, I highlight some code snippets that I find valuable. Please refer to the [section below](#roadmap--continued-development) for more concepts and features I implemented.
 
 #### Animation
 
@@ -125,6 +125,39 @@ return (
         {/* ... */}
     </button>
 );
+```
+
+#### Typescript
+
+Using discriminating unions to specify mandatory types based on the button type.
+
+```ts
+type PropsLink = {
+    label: string;
+    secondary?: boolean;
+
+    type: 'link';
+    href: string;
+};
+
+type PropsAnchor = {
+    label: string;
+    secondary?: boolean;
+
+    type: 'anchor';
+    anchorId: string;
+};
+
+type PropsButton = {
+    secondary?: boolean;
+
+    type: 'button';
+    btnType: 'button' | 'submit' | 'reset';
+    disabled?: boolean;
+    onClick?: () => void;
+};
+
+type Props = PropsLink | PropsAnchor | PropsButton;
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
