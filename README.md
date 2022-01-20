@@ -76,7 +76,7 @@
 
 <br />
 
-Rustica Coffee Website is a website with integrated store. The coffee shop is imaginary and the project was created for learning purposes. The website has a contact form integrated with formspree and formik, a random products section, a store subpage (among others), as well as an interactive shopping cart.
+Rustica Coffee Website is a website with an integrated store. The coffee shop is imaginary and the project was created for learning purposes. The website has a contact form integrated with formspree and formik, a random products section, a store subpage (among others), as well as an interactive shopping cart. In addition, the site is fully responsive and uses Next.js's integrated image optimization.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -102,20 +102,34 @@ Rustica Coffee Website is a website with integrated store. The coffee shop is im
 -   [] Feature 3
     -   [] Nested Feature
 
-See the [open issues](https://github.com/vincentole/rustica_coffee_website/issues) for a full list of proposed features (and known issues).
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Roadmap & Continued Development -->
 
 ### Roadmap & Continued Development
 
--   [] Feature 1
--   [] Feature 2
--   [] Feature 3
-    -   [] Nested Feature
+-   [x] API Routes
+-   [x] Dynamic Routes
+-   [x] Animations
+-   [x] Transitions
+-   [x] Interactive Cart
+    -   [x] Dynamic Product Amount
+    -   [x] Add items from shop subpage
+    -   [x] Add further items from within cart overlay (set to amount++)
+    -   [x] Remove items from within cart overlay (set to amount--)
+    -   [x] Remove complete product (set amount to 0)
+    -   [x] Show number of products added since last opened cart overlay
+    -   [x] Show product total
+    -   [x] Show cart total
+-   [x] Shop subpage
+    -   [x] Add different variants of the product via a form
+    -   [x] Get product data dynamically
+-   [x] Contact Form
+    -   [x] Error handling and frontend validation
+    -   [x] Hidden API Key via Next.js's API Route
+-   [ ] Fetch data from external DB with GraphQL
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+While I have already worked with REST APIs, I have yet to explore [GraphQL](https://graphql.org/). After learning the necessary tools, I will implement data fetching using [Apollo](https://www.apollographql.com/).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
