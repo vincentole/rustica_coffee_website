@@ -49,7 +49,7 @@
       <ul>
         <li><a href="#built-with">Built With</a></li>
         <li><a href="#what-i-learned-highlights">What I Learned Highlights</a></li>
-        <li><a href="#roadmap-&-continued-development">Roadmap & Continued Development</a></li>
+        <li><a href="#roadmap--continued-development">Roadmap & Continued Development</a></li>
       </ul>
     </li>
     <li>
