@@ -98,7 +98,11 @@ Rustica Coffee Website is a website with an integrated store. The coffee shop is
 
 ### What I Learned Highlights
 
-This is my first major project using Next.js and form integration. In this section I highlight some code snippets I find valuable to share. Refer to the [section below](#roadmap-&-continued-development) for more concepts and features I implemented.
+This is my first major project using Next.js and form integration.
+
+In this section I highlight some code snippets I find valuable to share.
+
+Refer to the [section below](#roadmap-&-continued-development) for more concepts and features I implemented.
 
 Animating a component once based on a dependency, here `amountCartItems`.
 
