@@ -26,7 +26,9 @@ const CartButton: React.FC<Props> = ({ className }) => {
             type='button'
             aria-label='Warenkorb öffnen'
             onClick={() => dispatch(cartActions.openCart())}
-            className={`relative p-1 hover:opacity-70 ${className} ${animate && 'animate-pop-once'}`}
+            className={`relative p-1 hover:opacity-70 ${className} ${
+                animate && 'animate-pop-once'
+            }`}
         >
             <ShopIcon className='w-[17px] h-[20px]' />
             {amountCartItems > 0 && (
