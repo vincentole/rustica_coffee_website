@@ -95,6 +95,8 @@ To get a local copy up and running follow these simple example steps.
 ### Installation
 
 1. Get a free API Key at [https://formspree.io/](https://formspree.io/)
+   <br/>
+   <br/>
 2. Clone the repo
    <br/>
    <br/>
