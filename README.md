@@ -129,17 +129,19 @@ To get a local copy up and running follow these simple example steps.
 
 You can run the project in a local environment as follows:
 
--   npm
+<br/>
+<br/>
+npm
+```sh
+npm run dev
+```
 
-    ```sh
-    npm run dev
-    ```
-
--   yarn
-
-    ```sh
-    yarn dev
-    ```
+<br/>
+<br/>
+yarn
+```sh
+yarn dev
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
