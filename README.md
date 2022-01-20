@@ -134,6 +134,7 @@ npm
 ```sh
 npm run dev
 ```
+
 <br/>
 yarn
 
@@ -160,7 +161,7 @@ See the [open issues](https://github.com/vincentole/rustica_coffee_website/issue
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `github/LICENSE.md` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -168,7 +169,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-vincentole - [@vincent_ole](https://twitter.com/@vincent_ole) - [LinkedIn](https://www.linkedin.com/in/ole-urfels/)
+Ole Urfels (vincentole):
+
+-   [@vincent_ole](https://twitter.com/@vincent_ole)
+-   [LinkedIn](https://www.linkedin.com/in/ole-urfels/)
 
 Project Link: [https://github.com/vincentole/rustica_coffee_website](https://github.com/vincentole/rustica_coffee_website)
 
