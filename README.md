@@ -162,7 +162,6 @@ npm
 npm run dev
 ```
 
-<br/>
 yarn
 
 ```sh
