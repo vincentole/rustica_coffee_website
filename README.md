@@ -48,7 +48,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#what-i-learned-highlights">What I Learned Highlights</a></li>
+        <li><a href="#highlights-of-what-i-learned">Highlights of What I Learned</a></li>
         <li><a href="#roadmap--continued-development">Roadmap & Continued Development</a></li>
       </ul>
     </li>
@@ -96,11 +96,11 @@ Rustica Coffee Website is a website with an integrated store. The coffee shop is
 
 <!-- What I learned -->
 
-### What I Learned Highlights
+### Highlights of What I Learned
 
 I present to you my first major project using Next.js and form integration.
 
-In this section, I highlight some code snippets that I find valuable. Please refer to the [section below](#roadmap--continued-development) for more concepts and features I implemented.
+In this section, I highlight some few code snippets that I find valuable. Please refer to the [section below](#roadmap--continued-development) for more concepts and features I implemented.
 
 #### Animation
 
