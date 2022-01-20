@@ -129,8 +129,6 @@ To get a local copy up and running follow these simple example steps.
 
 You can run the project in a local environment as follows:
 
-<br/>
-<br/>
 npm
 
 ```sh
