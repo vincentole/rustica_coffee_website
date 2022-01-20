@@ -71,11 +71,9 @@
 ## About The Project
 
 <br />
-<br />
 
 [![Rustica Coffee Website Screen Shot][product-screenshot]](https://rustica-coffee-website.vercel.app/)
 
-<br />
 <br />
 
 Rustica Coffee Website is a website with integrated store. The coffee shop is imaginary and the project was created for learning purposes. The website has a contact form integrated with formspree and formik, a random products section, a store subpage (among others), as well as an interactive shopping cart.
