@@ -73,9 +73,7 @@
 <br />
 <br />
 
-<div style='border-radius: 5px'>
-    [![Rustica Coffee Website Screen Shot][product-screenshot]](https://rustica-coffee-website.vercel.app/)
-</div>
+[![Rustica Coffee Website Screen Shot][product-screenshot]](https://rustica-coffee-website.vercel.app/)
 
 <br />
 <br />
