@@ -35,7 +35,7 @@
     <a href="https://rustica-coffee-website.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/vincentole/rustica_coffee_website/issues">Report Bug</a>
-    ·
+  
   </p>
 </div>
 
