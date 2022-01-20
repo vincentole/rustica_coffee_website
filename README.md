@@ -134,8 +134,6 @@ npm
 ```sh
 npm run dev
 ```
-
-<br/>
 <br/>
 yarn
 
