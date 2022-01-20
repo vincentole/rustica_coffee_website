@@ -48,6 +48,8 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#what-i-learned">What I Learned</a></li>
+        <li><a href="#what-i-learned">Roadmap & Continued Development</a></li>
       </ul>
     </li>
     <li>
@@ -57,7 +59,6 @@
         <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -86,6 +87,32 @@
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- What I learned -->
+
+### What I Learned
+
+-   [] Feature 1
+-   [] Feature 2
+-   [] Feature 3
+    -   [] Nested Feature
+
+See the [open issues](https://github.com/vincentole/rustica_coffee_website/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Roadmap & Continued Development -->
+
+### Roadmap & Continued Development
+
+-   [] Feature 1
+-   [] Feature 2
+-   [] Feature 3
+    -   [] Nested Feature
+
+Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <!-- GETTING STARTED -->
 
 ## Getting Started
@@ -94,7 +121,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-1. Get a free API Key at [https://formspree.io/](https://formspree.io/)
+1. Get a free formspree API Key at [https://formspree.io/](https://formspree.io/)
    <br/>
    <br/>
 2. Clone the repo
@@ -141,19 +168,6 @@ yarn
 ```sh
 yarn dev
 ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ROADMAP -->
-
-## Roadmap
-
--   [] Feature 1
--   [] Feature 2
--   [] Feature 3
-    -   [] Nested Feature
-
-See the [open issues](https://github.com/vincentole/rustica_coffee_website/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
