@@ -42,6 +42,7 @@
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
+  <br/>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -125,13 +126,11 @@ You can run the project in a local environment as follows:
 
 -   npm
 
-
     ```sh
     npm run dev
     ```
 
 -   yarn
-
 
     ```sh
     yarn dev
