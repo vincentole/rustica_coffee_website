@@ -97,10 +97,12 @@ To get a local copy up and running follow these simple example steps.
 1. Get a free API Key at [https://formspree.io/](https://formspree.io/)
 2. Clone the repo
    <br/>
+   <br/>
     ```sh
     git clone https://github.com/vincentole/rustica_coffee_website.git
     ```
 3. Install packages
+   <br/>
    <br/>
    npm
     ```sh
@@ -111,6 +113,7 @@ To get a local copy up and running follow these simple example steps.
     yarn
     ```
 4. Enter your API in `.env.local`
+   <br/>
    <br/>
     ```js
     FORMSPREE_POST_API = ENTER YOUR API
