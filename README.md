@@ -48,8 +48,8 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#what-i-learned">What I Learned</a></li>
-        <li><a href="#what-i-learned">Roadmap & Continued Development</a></li>
+        <li><a href="#what-i-learned-highlights">What I Learned Highlights</a></li>
+        <li><a href="#roadmap-&-continued-development">Roadmap & Continued Development</a></li>
       </ul>
     </li>
     <li>
@@ -82,6 +82,7 @@ Rustica Coffee Website is a website with an integrated store. The coffee shop is
 
 ### Built With
 
+-   [TypeScript](https://www.typescriptlang.org/)
 -   [Next.js](https://nextjs.org/)
 -   [React.js](https://reactjs.org/)
 -   [Redux](https://redux.js.org/)
@@ -95,12 +96,32 @@ Rustica Coffee Website is a website with an integrated store. The coffee shop is
 
 <!-- What I learned -->
 
-### What I Learned
+### What I Learned Highlights
 
--   [] Feature 1
--   [] Feature 2
--   [] Feature 3
-    -   [] Nested Feature
+This is my first major project using Next.js and form integration. In this section I highlight some code snippets I find valuable to share. Refer to the [section below](#roadmap-&-continued-development) for more concepts and features I implemented.
+
+Animating a component once based on a dependency, here `amountCartItems`.
+
+```tsx
+// ... //
+const [animate, setAnimate] = useState(false);
+
+useEffect(() => {
+    setAnimate(true);
+    // timing should be equivalent to animation timing
+    const timeout = setTimeout(() => setAnimate(false), 350);
+    return () => clearTimeout(timeout);
+}, [amountCartItems]);
+
+return (
+    <button
+        // ... //
+        className={`${className} ${animate && 'animate-pop-once'}`}
+    >
+        {/* ... */}
+    </button>
+);
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -108,8 +129,13 @@ Rustica Coffee Website is a website with an integrated store. The coffee shop is
 
 ### Roadmap & Continued Development
 
--   [x] API Routes
+-   [x] TypeScript
+    -   [x] Reusable Types
+    -   [x] Generic Types
+    -   [x] Discriminating Unions
+-   [x] Reusable Components
 -   [x] Dynamic Routes
+-   [x] API Routes
 -   [x] Animations
 -   [x] Transitions
 -   [x] Interactive Cart
@@ -117,7 +143,7 @@ Rustica Coffee Website is a website with an integrated store. The coffee shop is
     -   [x] Add items from shop subpage
     -   [x] Add further items from within cart overlay (set to amount++)
     -   [x] Remove items from within cart overlay (set to amount--)
-    -   [x] Remove complete product (set amount to 0)
+    -   [x] Remove complete product (set amount = 0)
     -   [x] Show number of products added since last opened cart overlay
     -   [x] Show product total
     -   [x] Show cart total

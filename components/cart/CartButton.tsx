@@ -23,6 +23,7 @@ const CartButton: React.FC<Props> = ({ className }) => {
 
     return (
         <button
+        
             type='button'
             aria-label='Warenkorb öffnen'
             onClick={() => dispatch(cartActions.openCart())}
