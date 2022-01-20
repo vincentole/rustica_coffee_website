@@ -26,7 +26,7 @@
 <h3 align="center">Rustica Coffee Website</h3>
 
   <p align="center">
-    Rustica Coffee Website is a website with integrated store. The coffee shop is imaginary and the project was created for learning purposes. The website has a contact form integrated with formspree and formik, a random products section, a store subpage (among others), as well as an interactive shopping cart.
+    A responsible and interactive coffee shop website with integrated store and cart.
     <br />
     <br />
     <a href="https://github.com/vincentole/rustica_coffee_website"><strong>Explore the code »</strong></a>
@@ -71,6 +71,8 @@
 ## About The Project
 
 [![Rustica Coffee Website Screen Shot][product-screenshot]](https://rustica-coffee-website.vercel.app/)
+
+Rustica Coffee Website is a website with integrated store. The coffee shop is imaginary and the project was created for learning purposes. The website has a contact form integrated with formspree and formik, a random products section, a store subpage (among others), as well as an interactive shopping cart.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -123,27 +125,31 @@ To get a local copy up and running follow these simple example steps.
 
 1. Get a free formspree API Key at [https://formspree.io/](https://formspree.io/)
    <br/>
-   
 2. Clone the repo
    <br/>
-   
+
     ```sh
     git clone https://github.com/vincentole/rustica_coffee_website.git
     ```
+
 3. Install packages
    <br/>
-   
-   npm
+
+    npm
+
     ```sh
     npm install
     ```
+
     yarn
+
     ```sh
     yarn
     ```
+
 4. Enter your API in `.env.local`
    <br/>
-   
+
     ```js
     FORMSPREE_POST_API = ENTER YOUR API
     ```
