@@ -132,6 +132,7 @@ You can run the project in a local environment as follows:
 <br/>
 <br/>
 npm
+
 ```sh
 npm run dev
 ```
@@ -139,6 +140,7 @@ npm run dev
 <br/>
 <br/>
 yarn
+
 ```sh
 yarn dev
 ```
