@@ -40,8 +40,8 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<details align="center">
-  <summary>Table of Contents</summary>
+<details>
+  <summary><b>Table of Contents</b></summary>
   <br/>
   <ol>
     <li>
