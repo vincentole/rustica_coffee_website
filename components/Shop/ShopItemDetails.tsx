@@ -11,10 +11,23 @@ import Button from '../UI/Button';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../store/store';
 import { cartActions } from '../../store/cartSlice';
-import { title } from 'process';
 
 const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => {
     const dispatch = useDispatch<AppDispatch>();
+
+    const optionList: JSX.Element[] = [];
+    for (let i = 0; i < shopItem.allWeights.length; i += 1) {
+        for (let j = 0; j < shopItem.allVariants.length; j += 1) {
+            optionList.push(
+                <option
+                    key={`${i}${j}`}
+                    value={`${shopItem.allWeights[i]} ${shopItem.allVariants[j]}`}
+                >
+                    {`${shopItem.allWeights[i]}g ${shopItem.allVariants[j]}`}
+                </option>,
+            );
+        }
+    }
 
     return (
         <section>
@@ -91,10 +104,7 @@ const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => 
                                             >
                                                 Wie viel Kaffee brauchst du?
                                             </option>
-                                            <option value='250 gemahlen'>250g gemahlen</option>
-                                            <option value='500 gemahlen'>500g gemahlen</option>
-                                            <option value='250 Bohnen'>250g Bohnen</option>
-                                            <option value='500 Bohnen'>500g Bohnen</option>
+                                            {optionList}
                                         </Field>
 
                                         <ErrorMessage name='amount' component={FormErrorDiv} />
