@@ -55,7 +55,7 @@ const Header = () => {
                 isScrolled
                     ? 'bg-theme-white text-theme-anthrazit shadow-md '
                     : 'bg-theme-transparent text-theme-white'
-            } ${cartShown ? 'pr-[45px]' : ''}`}
+            } ${cartShown ? 'pr-[15px]' : ''}`}
         >
             <MobileNav onClose={onMobileNavCloseHandler} isShown={mobileNavShown} />
             <div className='cstm-container-nav h-[55px] flex justify-between items-center xl:max-w-[1280px] xl:mx-auto'>
