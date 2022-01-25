@@ -26,7 +26,7 @@ export default async function handler(
 
         try {
             await sendForm(req.body);
-            res.status(200).json({ message: 'Message sent successfully.' });
+            res.status(201).json({ message: 'Message sent successfully.' });
         } catch (error) {
             res.status(500).json({ message: 'Error while sending the data.' });
         }

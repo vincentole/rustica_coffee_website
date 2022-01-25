@@ -47,6 +47,7 @@ const CartItem: React.FC<{ item: CartItemType }> = ({ item }) => {
                             onClick={removeOneFromCartHandler}
                             type='button'
                             aria-label='Anzahl um eins veringern'
+                            className='p-2.5'
                         >
                             <MinusIcon className='w-[15px] h-[h-15px]' />
                         </button>
@@ -54,6 +55,7 @@ const CartItem: React.FC<{ item: CartItemType }> = ({ item }) => {
                             onClick={addOneToCartHandler}
                             type='button'
                             aria-label='Anzahl um eins erhöhen'
+                            className='p-2.5'
                         >
                             <PlusIcon className='w-[15px] h-[h-15px]' />
                         </button>
@@ -74,6 +76,7 @@ const CartItem: React.FC<{ item: CartItemType }> = ({ item }) => {
                             onClick={removeProductHandler}
                             type='button'
                             aria-label='Produkt aus dem Warenkorb entfernen'
+                            className='p-2'
                         >
                             <CloseIcon className='w-[12px] h-[h-12px]' />
                         </button>
