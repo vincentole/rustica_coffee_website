@@ -1,13 +1,10 @@
-export default async function handler(
-    req: { method: string; body: string },
-    res: {
-        status: (arg0: number) => {
-            (): any;
-            new (): any;
-            json: { (arg0: { message: string }): void; new (): any };
-        };
-    },
-) {
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+type Data = {
+    message: string;
+};
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     if (req.method === 'POST') {
         const url = process.env.FORMSPREE_POST_API;
         const sendForm = async (values: string) => {
