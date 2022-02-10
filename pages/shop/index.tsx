@@ -33,6 +33,7 @@ const Shop: React.FC<{ shopItems: ShopItemType[] }> = ({ shopItems }) => {
 export default Shop;
 
 export const getStaticProps: GetStaticProps = async () => {
+    
     const shopItems: ShopItemType[] = shopItemsData;
 
     return { props: { shopItems: shopItems } };
