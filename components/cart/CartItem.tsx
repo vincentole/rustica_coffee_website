@@ -27,7 +27,7 @@ const CartItem: React.FC<{ item: CartItemType }> = ({ item }) => {
             <div className='flex justify-between gap-4'>
                 <div className='relative w-[110px] h-[124px] bg-theme-kraftpapier'>
                     <Image
-                        src={item.img}
+                        src={item.image.url}
                         layout='fill'
                         objectFit='contain'
                         objectPosition='center'

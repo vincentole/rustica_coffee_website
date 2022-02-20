@@ -5,10 +5,10 @@ import IconKaffeeSchaufel from '../Icons/IconKaffeeSchaufel';
 
 import coffeeCostaRica from '/public/img/FEND_Coffee_Costa-Rica 1.png';
 import Link from 'next/link';
-import TopProductType from '../../types/topProductType';
+import shopItemType from '../../types/shopItemType';
 
 type Props = {
-    item: TopProductType;
+    item: shopItemType;
 };
 
 const ShopItemTopProducts: React.FC<Props> = ({ item }) => {

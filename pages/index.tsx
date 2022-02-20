@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 
-import { GraphQLClient } from 'graphql-request';
+import { GraphQLClient, gql } from 'graphql-request';
 
 import HeroSectionTxtCta from '../components/layout/HeroSectionTxtCta';
 import InfoSectionImgRight from '../components/layout/InfoSectionImgRight';
@@ -14,10 +14,12 @@ import MapSection from '../components/layout/MapSection';
 import shopImage from '../public/img/FEND-Coffee-shop.png';
 import plantImage from '../public/img/FEND-coffee-plant.png';
 
-import TopProductsType from '../types/topProductType';
+import shopItemsType from '../types/shopItemsType';
+import { graphcmsRequest } from '../graphql/client';
+import { shopItemsQuery } from '../graphql/queries';
 
 type HomeProps = {
-    products: TopProductsType;
+    products: shopItemsType;
 };
 
 const Home: NextPage<HomeProps> = ({ products }) => {
@@ -66,23 +68,7 @@ const Home: NextPage<HomeProps> = ({ products }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const endpoint = 'https://api-eu-central-1.graphcms.com/v2/ckze6y9my27k901xrcsp88ao7/master';
-    const graphcms = new GraphQLClient(endpoint, {
-        headers: {
-            authorization: `Bearer ${process.env.GRAPHQL_CMS_ACCESS_TOKEN}`,
-        },
-    });
-    const { products } = await graphcms.request(
-        `
-            query MyQuery {
-                products {
-                    slug
-                    title
-                    allPrices
-                }
-            }
-        `,
-    );
+    const { products } = await graphcmsRequest<{ products: shopItemsType }>(shopItemsQuery());
 
     return {
         props: {

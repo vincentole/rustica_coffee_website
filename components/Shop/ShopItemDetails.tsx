@@ -4,7 +4,7 @@ import FrenchPressIcon from '../Icons/IconFrenchPress';
 import IconKaffeeSchaufel from '../Icons/IconKaffeeSchaufel';
 import * as Yup from 'yup';
 
-import ShopItemType from '../../types/shopItemType';
+import ShopItemDetailsType from '../../types/shopItemDetailsType';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import FormErrorDiv from '../UI/FormErrorDiv';
 import Button from '../UI/Button';
@@ -12,15 +12,14 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../store/store';
 import { cartActions } from '../../store/cartSlice';
 
-const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => {
+const ShopItemDetails: React.FC<{ shopItem: ShopItemDetailsType }> = ({ shopItem }) => {
     const dispatch = useDispatch<AppDispatch>();
-
     const optionList: JSX.Element[] = [];
     for (let i = 0; i < shopItem.allWeights.length; i += 1) {
         for (let j = 0; j < shopItem.allVariants.length; j += 1) {
             optionList.push(
                 <option
-                    key={`${i}${j}`}
+                    key={'' + i + j}
                     value={`${shopItem.allWeights[i]} ${shopItem.allVariants[j]}`}
                 >
                     {`${shopItem.allWeights[i]}g ${shopItem.allVariants[j]}`}
@@ -35,7 +34,7 @@ const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => 
                 <div className='lg:flex gap-[40px]'>
                     <div className='relative h-[396px] bg-theme-kraftpapier lg:w-[612px] lg:h-[741px]'>
                         <Image
-                            src={shopItem.img}
+                            src={shopItem.image.url}
                             layout='fill'
                             objectFit='contain'
                             objectPosition='center'
@@ -49,11 +48,11 @@ const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => 
                         <h2 className='theme-text-h2-m lg:theme-text-h2 '>{shopItem.title}</h2>
                         <div className='spacer-12' />
                         <div className='theme-text-subh-m'>
-                            {shopItem.prices.length > 1
-                                ? `${shopItem.prices[0].toFixed(2)}€ – ${shopItem.prices[
-                                      shopItem.prices.length - 1
+                            {shopItem.allPrices.length > 1
+                                ? `${shopItem.allPrices[0].toFixed(2)}€ – ${shopItem.allPrices[
+                                      shopItem.allPrices.length - 1
                                   ].toFixed(2)}€`
-                                : `${shopItem.prices[0].toFixed(2)}€`}
+                                : `${shopItem.allPrices[0].toFixed(2)}€`}
                         </div>
                         <div className='spacer-35' />
                         <p className='theme-text-body-m lg:theme-text-body'>{shopItem.summary}</p>
@@ -77,8 +76,8 @@ const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => 
                                         amount: 1,
                                         bagSize: Number(values.amount.split(' ')[0]),
                                         variant: variant,
-                                        price: shopItem.prices[weightIndex],
-                                        img: shopItem.img,
+                                        price: shopItem.allPrices[weightIndex],
+                                        image: { url: shopItem.image.url },
                                     }),
                                 );
 
@@ -140,7 +139,12 @@ const ShopItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => 
                                 <div>{shopItem.aroma} geröstet</div>
                             </div>
                             <div className='w-[70px]'>
-                                <div>Für {shopItem.cookingUtilities}</div>
+                                <div>
+                                    Für{' '}
+                                    {shopItem.cookingUtilities.map((item) =>
+                                        item.split('_').join(' '),
+                                    )}
+                                </div>
                             </div>
                             <div className='w-[70px]'>
                                 <div>

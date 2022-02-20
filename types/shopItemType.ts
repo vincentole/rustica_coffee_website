@@ -1,15 +1,9 @@
 type ShopItemType = {
     id: string;
+    slug: string;
     title: string;
-    prices: number[];
-    aroma: string;
-    cookingUtilities: string[];
-    allVariants: string[];
-    allWeights: number[];
-    summary: string;
-    description: string;
-    readyForDelivery: boolean;
-    img: StaticImageData;
+    allPrices: number[];
+    image: { url: string };
 };
 
 export default ShopItemType;

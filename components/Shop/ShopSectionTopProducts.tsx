@@ -1,18 +1,16 @@
 import ShopItemTopProducts from './ShopItemTopProducts';
 import Button from '../UI/Button';
 import { randomNFromArray } from '../../lib/utilities';
-import TopProductsType from '../../types/topProductsType';
-import TopProductType from '../../types/topProductType';
-
-
+import shopItemsType from '../../types/shopItemsType';
+import shopItemType from '../../types/shopItemType';
 
 type Props = {
-    products: TopProductsType;
+    products: shopItemsType;
 };
 
 const ShopSectionTopProducts: React.FC<Props> = ({ products }) => {
-    const randomItems = randomNFromArray<TopProductType>(products, 4);
-    const itemList = randomItems.map((item) => <ShopItemTopProducts key={item.slug} item={item} />);
+    const randomItems = randomNFromArray<shopItemType>(products, 4);
+    const itemList = randomItems.map((item) => <ShopItemTopProducts key={item.id} item={item} />);
 
     return (
         <section className='bg-theme-anthrazit text-theme-white'>

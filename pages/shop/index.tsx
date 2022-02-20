@@ -3,10 +3,11 @@ import Head from 'next/head';
 import MapSection from '../../components/layout/MapSection';
 import ShopSection from '../../components/Shop/ShopSection';
 
-import shopItemsData from '../../data/shopItemsData';
-import ShopItemType from '../../types/shopItemType';
+import { graphcmsRequest } from '../../graphql/client';
+import { shopItemsQuery } from '../../graphql/queries';
+import ShopItemsType from '../../types/shopItemsType';
 
-const Shop: React.FC<{ shopItems: ShopItemType[] }> = ({ shopItems }) => {
+const Shop: React.FC<{ shopItems: ShopItemsType }> = ({ shopItems }) => {
     return (
         <>
             <Head>
@@ -33,8 +34,9 @@ const Shop: React.FC<{ shopItems: ShopItemType[] }> = ({ shopItems }) => {
 export default Shop;
 
 export const getStaticProps: GetStaticProps = async () => {
-    
-    const shopItems: ShopItemType[] = shopItemsData;
+    const { products: shopItems } = await graphcmsRequest<{ products: ShopItemsType }>(
+        shopItemsQuery(),
+    );
 
     return { props: { shopItems: shopItems } };
 };

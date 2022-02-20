@@ -1,13 +1,22 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import MapSection from '../../../components/layout/MapSection';
 import ShopItemDetails from '../../../components/Shop/ShopItemDetails';
 import ShopSectionTopProducts from '../../../components/Shop/ShopSectionTopProducts';
 
-import shopItemsData from '../../../data/shopItemsData';
-import ShopItemType from '../../../types/shopItemType';
+import { graphcmsRequest } from '../../../graphql/client';
+import {
+    shopItemBySlugQuery,
+    shopItemsAllSlugsQuery,
+    shopItemsQuery,
+} from '../../../graphql/queries';
+import ShopItemDetailsType from '../../../types/shopItemDetailsType';
+import shopItemsType from '../../../types/shopItemsType';
 
-const ItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => {
+const ItemDetails: React.FC<{ shopItem: ShopItemDetailsType; shopItems: shopItemsType }> = ({
+    shopItem,
+    shopItems,
+}) => {
     return (
         <>
             <Head>
@@ -24,7 +33,7 @@ const ItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => {
                 <div className='spacer-60 lg:spacer-125' />
                 <ShopItemDetails shopItem={shopItem} />
                 <div className='spacer-60 lg:spacer-125' />
-                <ShopSectionTopProducts />
+                <ShopSectionTopProducts products={shopItems} />
                 <div className='spacer-60 lg:spacer-125' />
                 <MapSection />
             </main>
@@ -34,16 +43,25 @@ const ItemDetails: React.FC<{ shopItem: ShopItemType }> = ({ shopItem }) => {
 
 export default ItemDetails;
 
-export const getStaticProps: GetStaticProps = async (context) => {
-    const shopItems: ShopItemType[] = shopItemsData;
-    const shopItem = shopItems.filter((item) => item.id === context.params!.shopItemId);
-    return { props: { shopItem: shopItem[0] } };
+export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
+    const slug = context?.params?.shopItemId;
+
+    if (typeof slug != 'string') return { notFound: true };
+
+    const { products: shopItem } = await graphcmsRequest<{ products: ShopItemDetailsType[] }>(
+        shopItemBySlugQuery(slug),
+    );
+    const { products: shopItems } = await graphcmsRequest<{ products: shopItemsType }>(
+        shopItemsQuery(),
+    );
+    return { props: { shopItem: shopItem[0], shopItems } };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const shopItems: ShopItemType[] = shopItemsData;
-    const paths = shopItems.map((item) => ({ params: { shopItemId: item.id } }));
-
+    const { products } = await graphcmsRequest<{ products: { id: string; slug: string }[] }>(
+        shopItemsAllSlugsQuery(),
+    );
+    const paths = products.map((item) => ({ params: { shopItemId: item.slug } }));
     return {
         paths: paths,
         fallback: false,

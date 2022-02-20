@@ -61,7 +61,7 @@ const Cart = () => {
 
                             <div className='spacer-12' />
                             <Dialog.Title className='flex gap-[35px] md:gap-[50px] justify-between items-end'>
-                                <h2 className='theme-text-h3-m lg:theme-text-h3'>Warenkorb</h2>
+                                <span className='theme-text-h3-m lg:theme-text-h3'>Warenkorb</span>
                                 <span>{`${cartItemAmount} Produkt${
                                     cartItemAmount > 1 || cartItemAmount === 0 ? 'e' : ''
                                 }`}</span>

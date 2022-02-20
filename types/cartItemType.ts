@@ -5,7 +5,7 @@ type CartItemType = {
     variant: string;
     amount: number;
     price: number;
-    img: StaticImageData;
+    image: { url: string };
 };
 
 export default CartItemType;

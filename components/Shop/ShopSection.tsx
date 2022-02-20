@@ -1,12 +1,12 @@
 import ShopItem from './ShopItem';
-import ShopItemType from '../../types/shopItemType';
 import Link from 'next/link';
+import ShopItemsType from '../../types/shopItemsType';
 
-const ShopSection: React.FC<{ shopItems: ShopItemType[] }> = ({ shopItems }) => {
+const ShopSection: React.FC<{ shopItems: ShopItemsType }> = ({ shopItems }) => {
     const itemList = shopItems.map((item) => (
-        <Link key={item.id} href={`/shop/items/${item.id}`}>
+        <Link key={item.id} href={`/shop/items/${item.slug}`}>
             <a>
-                <ShopItem img={item.img} title={item.title} prices={item.prices} />
+                <ShopItem img={item.image.url} title={item.title} prices={item.allPrices} />
             </a>
         </Link>
     ));
