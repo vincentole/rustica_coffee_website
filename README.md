@@ -76,7 +76,7 @@
 
 <br />
 
-Rustica Coffee Website is a website with an integrated store. The coffee shop is imaginary and the project was created for learning purposes. The website has a contact form integrated with formspree and formik, a random products section, a store subpage (among others), as well as an interactive shopping cart. In addition, the site is fully responsive and uses Next.js's integrated image optimization.
+Rustica Coffee Website is a website with an integrated store. The coffee shop is imaginary and the project was created for learning purposes. The website has a contact form integrated with formspree and formik, a random products section, a store subpage (among others), as well as an interactive shopping cart. In addition, the site is fully responsive and uses Next.js's integrated image optimization. The products' data is pulled from graphcms via their GraphQL API.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -91,6 +91,7 @@ Rustica Coffee Website is a website with an integrated store. The coffee shop is
 -   [headlessUI](https://headlessui.dev/)
 -   [Formik](https://formik.org/)
 -   [Formspree](https://formspree.io/)
+-   [GraphQL](https://graphql.org/) via [graphcms](https://graphcms.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -190,9 +191,7 @@ type Props = PropsLink | PropsAnchor | PropsButton;
 -   [x] Contact Form
     -   [x] Error handling and frontend validation
     -   [x] Hidden API Key via Next.js's API Route
--   [ ] Fetch data from external DB with GraphQL
-
-While I have already worked with REST APIs, I have yet to explore [GraphQL](https://graphql.org/). After learning the necessary tools, I will implement data fetching using [Apollo](https://www.apollographql.com/).
+-   [x] Fetch data from external DB with GraphQL
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -204,17 +203,40 @@ To get a local copy up and running follow these steps.
 
 ### Installation
 
-1. Get a free formspree API Key at [https://formspree.io/](https://formspree.io/)
-   <br/>
-2. Clone the repo
-   <br/>
+1.  Get a free formspree API Key at [https://formspree.io/](https://formspree.io/)
+2.  Setup a project for free at [graphcms](https://graphcms.com/) and create a schema according to the `shopItemDetailsType.ts`:
 
-    ```sh
-    git clone https://github.com/vincentole/rustica_coffee_website.git
+    ```ts
+    type ShopItemDetailsType = {
+        id: string;
+        slug: string;
+        title: string;
+        allPrices: number[];
+        aroma: string;
+        cookingUtilities: string[];
+        allVariants: string[];
+        allWeights: number[];
+        summary: string;
+        description: string;
+        readyForDelivery: boolean;
+        image: { url: string };
+    };
+
+    export default ShopItemDetailsType;
     ```
 
-3. Install packages
-   <br/>
+    Note that images provided by _graphcms_ will automatically have a `url` field.
+    Then generate a _Permanent Auth Token_.
+
+3.  Clone the repo
+    <br/>
+
+        ```sh
+        git clone https://github.com/vincentole/rustica_coffee_website.git
+        ```
+
+4.  Install packages
+    <br/>
 
     npm
 
@@ -228,11 +250,12 @@ To get a local copy up and running follow these steps.
     yarn
     ```
 
-4. Enter your API in `.env.local`
-   <br/>
+5.  Enter your API keys in `.env.local`
+    <br/>
 
     ```js
-    FORMSPREE_POST_API = ENTER YOUR API
+    FORMSPREE_POST_API= Enter Your API KEY HERE
+    GRAPHQL_CMS_ACCESS_TOKEN=FORMSPREE_POST_API = Enter Your API KEY HERE
     ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
