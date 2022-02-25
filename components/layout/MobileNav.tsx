@@ -9,7 +9,7 @@ type Props = {
 const MobileNav = ({ onClose, isShown }: Props) => {
     return (
         <div
-            className={`z-10 md:hidden absolute w-[100%] min-h-[100vh] bg-theme-anthrazit transition-all duration-300 ease-in-out ${
+            className={`z-10 md:hidden absolute top-0 left-0 w-[100vw] min-h-[100vh] bg-theme-anthrazit transition-all duration-300 ease-in-out ${
                 !isShown && '-translate-x-full'
             }`}
         >

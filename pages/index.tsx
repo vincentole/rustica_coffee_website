@@ -69,7 +69,7 @@ const Home: NextPage<HomeProps> = ({ products }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
     const { products } = await graphcmsRequest<{ products: shopItemsType }>(shopItemsQuery());
-
+    console.log(products);
     return {
         props: {
             products,
