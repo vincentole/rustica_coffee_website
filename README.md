@@ -168,16 +168,16 @@ type Props = PropsLink | PropsAnchor | PropsButton;
 ### Roadmap & Continued Development
 
 -   [x] TypeScript
-    -   [x] Reusable Types
-    -   [x] Generic Types
-    -   [x] Discriminating Unions
--   [x] Reusable Components
--   [x] Dynamic Routes
--   [x] API Routes
+    -   [x] Reusable types
+    -   [x] Generic types
+    -   [x] Discriminating unions
+-   [x] Reusable components
+-   [x] Dynamic routes
+-   [x] API routes
 -   [x] Animations
 -   [x] Transitions
--   [x] Interactive Cart
-    -   [x] Dynamic Product Amount
+-   [x] Interactive cart
+    -   [x] Dynamic product amount
     -   [x] Add items from shop subpage
     -   [x] Add further items from within cart overlay (set to amount++)
     -   [x] Remove items from within cart overlay (set to amount--)
