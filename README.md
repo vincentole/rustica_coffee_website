@@ -26,7 +26,7 @@
 <h3 align="center">Rustica Coffee Website</h3>
 
   <p align="center">
-    A responsible and interactive coffee shop website with integrated store and cart.
+    A responsive and interactive coffee shop website with integrated store and cart.
     <br />
     <br />
     <a href="https://github.com/vincentole/rustica_coffee_website"><strong>Explore the code »</strong></a>
