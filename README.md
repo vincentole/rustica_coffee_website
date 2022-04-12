@@ -9,12 +9,9 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url] [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -76,7 +73,11 @@
 
 <br />
 
-Rustica Coffee Website is a website with an integrated store. The coffee shop is imaginary and the project was created for learning purposes. The website has a contact form integrated with formspree and formik, a random products section, a store subpage (among others), as well as an interactive shopping cart. In addition, the site is fully responsive and uses Next.js's integrated image optimization. The products' data is pulled from graphcms via their GraphQL API.
+Rustica Coffee Website is a website with an integrated store. The coffee shop is imaginary and the
+project was created for learning purposes. The website has a contact form integrated with formspree
+and formik, a random products section, a store subpage (among others), as well as an interactive
+shopping cart. In addition, the site is fully responsive and uses Next.js's integrated image
+optimization. The products' data is pulled from graphcms via their GraphQL API.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -97,11 +98,12 @@ Rustica Coffee Website is a website with an integrated store. The coffee shop is
 
 <!-- What I learned -->
 
-### What I Learned
+### Highlights of What I Learned
 
 I present to you my first major project using Next.js and form integration.
 
-In this section, I highlight a few code snippets that I find valuable. Please refer to the [section below](#roadmap--continued-development) for more concepts and features I implemented.
+In this section, I highlight a few code snippets that I find valuable. Please refer to the
+[section below](#roadmap--continued-development) for more concepts and features I implemented.
 
 #### Animation
 
@@ -204,7 +206,8 @@ To get a local copy up and running follow these steps.
 ### Installation
 
 1.  Get a free formspree API Key at [https://formspree.io/](https://formspree.io/)
-2.  Setup a project for free at [graphcms](https://graphcms.com/) and create a schema according to the `shopItemDetailsType.ts`:
+2.  Setup a project for free at [graphcms](https://graphcms.com/) and create a schema according to
+    the `shopItemDetailsType.ts`:
 
     ```ts
     type ShopItemDetailsType = {
@@ -225,18 +228,16 @@ To get a local copy up and running follow these steps.
     export default ShopItemDetailsType;
     ```
 
-    Note that images provided by _graphcms_ will automatically have a `url` field.
-    Then generate a _Permanent Auth Token_.
+    Note that images provided by _graphcms_ will automatically have a `url` field. Then generate a
+    _Permanent Auth Token_.
 
-3.  Clone the repo
-    <br/>
+3.  Clone the repo <br/>
 
         ```sh
         git clone https://github.com/vincentole/rustica_coffee_website.git
         ```
 
-4.  Install packages
-    <br/>
+4.  Install packages <br/>
 
     npm
 
@@ -250,8 +251,7 @@ To get a local copy up and running follow these steps.
     yarn
     ```
 
-5.  Enter your API keys in `.env.local`
-    <br/>
+5.  Enter your API keys in `.env.local` <br/>
 
     ```js
     FORMSPREE_POST_API= Enter Your API KEY HERE
@@ -297,7 +297,8 @@ Ole Urfels (vincentole):
 -   [@vincent_ole](https://twitter.com/@vincent_ole)
 -   [LinkedIn](https://www.linkedin.com/in/ole-urfels/)
 
-Project Link: [https://github.com/vincentole/rustica_coffee_website](https://github.com/vincentole/rustica_coffee_website)
+Project Link:
+[https://github.com/vincentole/rustica_coffee_website](https://github.com/vincentole/rustica_coffee_website)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -312,16 +313,22 @@ Project Link: [https://github.com/vincentole/rustica_coffee_website](https://git
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/vincentole/rustica_coffee_website.svg?style=for-the-badge
+[contributors-shield]:
+    https://img.shields.io/github/contributors/vincentole/rustica_coffee_website.svg?style=for-the-badge
 [contributors-url]: https://github.com/vincentole/rustica_coffee_website/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/vincentole/rustica_coffee_website.svg?style=for-the-badge
+[forks-shield]:
+    https://img.shields.io/github/forks/vincentole/rustica_coffee_website.svg?style=for-the-badge
 [forks-url]: https://github.com/vincentole/rustica_coffee_website/network/members
-[stars-shield]: https://img.shields.io/github/stars/vincentole/rustica_coffee_website.svg?style=for-the-badge
+[stars-shield]:
+    https://img.shields.io/github/stars/vincentole/rustica_coffee_website.svg?style=for-the-badge
 [stars-url]: https://github.com/vincentole/rustica_coffee_website/stargazers
-[issues-shield]: https://img.shields.io/github/issues/vincentole/rustica_coffee_website.svg?style=for-the-badge
+[issues-shield]:
+    https://img.shields.io/github/issues/vincentole/rustica_coffee_website.svg?style=for-the-badge
 [issues-url]: https://github.com/vincentole/rustica_coffee_website/issues
-[license-shield]: https://img.shields.io/github/license/vincentole/rustica_coffee_website.svg?style=for-the-badge
+[license-shield]:
+    https://img.shields.io/github/license/vincentole/rustica_coffee_website.svg?style=for-the-badge
 [license-url]: https://github.com/vincentole/rustica_coffee_website/blob/master/github/LICENSE.md
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-shield]:
+    https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ole-urfels
 [product-screenshot]: github/preview.png
